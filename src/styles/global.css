@@ -8,6 +8,7 @@
 
 body {
     overflow: hidden;
+    background-color: #F9F6FC;
 }
 
 :root {
@@ -15,9 +16,28 @@ body {
 
     --tx-lg: 600 1.625rem/1 var(--ff); /* 26px*/
     --tx-md: 600 1.25rem/1 var(--ff); /* 20px*/
+    --tx-sm: 600 1rem/1 var(--ff); /* 16px */
+
+    --bnt-cancel-sm: 500 .875rem/1 var(--ff); /* 8px */
+
+    /* Colors */
+    --cl-black: #000;
+    --cl-desc: #8F8D8D;
+    --cl-darkgreen: #367623;
+    --cl-lightgreen: #BFEAB2;
+    
+
+    /* Nav colors */
+    --cl-menu: #fff;
 }
 
 a {
     text-decoration: none;
     color: inherit;
+}
+
+button {
+    border: none;
+    background: none;
+    appearance: none;
 }

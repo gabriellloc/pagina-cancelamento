@@ -3,6 +3,10 @@
     height: 100vh;
 }
 
+
+/* Lado esquerdo da página */
+
+
 .main-l {
     background-image: linear-gradient(-7deg, #7203E1 50%, #126FEB);
 }
@@ -22,16 +26,16 @@
 
 .childs h2 {
     font: var(--tx-md);
-    color: #fff;
+    color: var(--cl-menu);
 }
 
 .childs img {
     width: 1.75rem;
-    color: #fff;
+    color: var(--cl-menu);
 }
 
 .dad .childs:last-child {
-    border-top: 2px solid #fff;
+    border-top: 2px solid var(--cl-menu);
     padding-top: 1rem;
 }
 
@@ -39,4 +43,100 @@
     .childs h2 {
         display: none;
     }
+}
+
+
+/* Lado direito da página */
+
+
+.main-r {
+    margin: 2.5625rem auto;
+    width: 70%;
+    background: #F9F6FC;
+}
+
+.charge {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.charge section {
+    border-bottom: 1px solid #BCB7B7;
+    padding-bottom: 1.5rem;
+}
+
+/* A primeira parte */
+
+.charge section > p {
+    font: var(--tx-sm);
+    text-transform: uppercase;
+    color: #BCB7B7;
+}
+
+.charge section > h2 {
+    font: var(--tx-lg);
+    color: var(--cl-black);
+}
+
+.charge section:first-child{
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+}
+
+/* A segunda parte */
+
+.charge section:last-child {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.charge section div h3 {
+    color: var(--cl-black);
+    font: var(--tx-md);
+    margin-bottom: .4rem;
+}
+
+.charge section div:first-child p {
+    font: var(--tx-sm);
+    color: var(--cl-desc);
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: #fff;
+    padding: 1.6rem;
+    border-radius: 5px;
+    box-shadow: 5px 4px 4px rgba(0, 0, 0, .1);
+}
+
+.stats .activation {
+    font: var(--tx-sm);
+    color: var(--cl-darkgreen);
+    background: var(--cl-lightgreen);
+    padding: .8rem 8%;
+    border-radius: .5rem;
+}
+
+.stats button {
+    --cl-bnt-cancel: #3C3C3C;
+    --bg-bnt-cancel: #F9F6FC;
+    border: 1px solid var(--cl-bnt-cancel);
+    padding: .4rem .5rem;
+    border-radius: .5rem;
+    color: var(--cl-bnt-cancel);
+    background-color: var(--bg-bnt-cancel);
+    font: var(--bnt-cancel-sm);
+    transition: background 300ms ease;
+}
+
+.stats button:hover {
+    --cl-bnt-cancel: #3c3c3c7a;
+    --bg-bnt-cancel: #ff30308b;
+    cursor: pointer;
 }
