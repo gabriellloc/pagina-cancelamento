@@ -46,12 +46,6 @@ dialog {
     text-align: center;
 }
 
-@media (width < 50em) {
-    .acolhimento h1 {
-        font: var(--title-large-mobile);
-    }
-}
-
 .acolhimento p {
     grid-area: D;
     font: var(--tx-md);
@@ -59,6 +53,16 @@ dialog {
     text-align: center;
     margin: auto;
     max-width: 90%;
+}
+
+@media (width < 50em) {
+    .acolhimento h1 {
+        font: var(--title-large-mobile);
+    }
+
+    .acolhimento p {
+        font: var(--tx-sm);
+    }
 }
 
 .acolhimento .manterAss {
