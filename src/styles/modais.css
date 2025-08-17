@@ -1,0 +1,85 @@
+dialog {
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border: none;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .5);
+    border-radius: 1rem;
+    z-index: 1;
+}
+
+@media (width < 80em) {
+    dialog {
+        min-width: 80%;
+        min-height: 50%;
+    }
+}
+
+.acolhimento {
+    display: grid;
+    grid-template-areas: 
+    "A A"
+    "B B"
+    "C C"
+    "D D"
+    "E F";
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.acolhimento .logo {
+    grid-area: A;
+    margin: 2rem auto 1rem;
+    width: 3rem;
+}
+
+.acolhimento .heart {
+    grid-area: B;
+    margin: 1rem auto;
+}
+
+.acolhimento h1 {
+    grid-area: C;
+    font: var(--title-large);
+    letter-spacing: 1px;
+    color: var(--cl-lightblue);
+    text-align: center;
+}
+
+@media (width < 50em) {
+    .acolhimento h1 {
+        font: var(--title-large-mobile);
+    }
+}
+
+.acolhimento p {
+    grid-area: D;
+    font: var(--tx-md);
+    color: var(--cl-black);
+    text-align: center;
+    margin: auto;
+    max-width: 90%;
+}
+
+.acolhimento .manterAss {
+    grid-area: E;
+    width: fit-content;
+    margin: 1rem auto;
+    padding: 12px 1.2rem;
+    border-radius: .5rem;
+    background-image: linear-gradient(90deg, #126FEB, #7203E1);
+    color: var(--cl-menu);
+    font: var(--bnt-cancel-md);
+}
+
+.acolhimento .continuarAcolhi {
+    grid-area: F;
+    width: fit-content;
+    padding: 12px 1rem;
+    margin: 1rem auto;
+    font: var(--bnt-cancel-md);
+    border: 1px solid var(--cl-purple);
+    background: var(--bg-color-dark);
+    border-radius: .5rem;
+    color: var(--cl-purple);
+}
