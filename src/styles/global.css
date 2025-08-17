@@ -48,3 +48,7 @@ button {
     background: none;
     appearance: none;
 }
+
+.blur {
+    filter: blur(3.5px);
+}
