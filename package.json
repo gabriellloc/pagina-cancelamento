@@ -1,4 +1,5 @@
 {
+  "name": "cancellation-page",
   "scripts": {
     "build": "babel src/main.js --out-dir ./dist"
   },
