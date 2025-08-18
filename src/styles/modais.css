@@ -6,6 +6,8 @@ dialog {
     box-shadow: 0 0 8px rgba(0, 0, 0, .5);
     border-radius: 1rem;
     z-index: 1;
+    min-width: fit-content;
+    min-height: fit-content;
 }
 
 @media (width < 80em) {
@@ -38,30 +40,35 @@ dialog {
     margin: 1rem auto;
 }
 
-.acolhimento h1 {
+.acolhimento .byeUser {
     grid-area: C;
     font: var(--title-large);
     letter-spacing: 1px;
     color: var(--cl-lightblue);
-    text-align: center;
+    text-align: justify;
+    margin: auto;
 }
 
-.acolhimento p {
+.acolhimento .byeText {
     grid-area: D;
-    font: var(--tx-md);
+    font: var(--tx-sm);
     color: var(--cl-black);
     text-align: center;
     margin: auto;
-    max-width: 90%;
+    max-width: 68%;
 }
 
 @media (width < 50em) {
-    .acolhimento h1 {
-        font: var(--title-large-mobile);
+    .acolhimento .byeUser {
+        font: var(--title-sl);
+        margin: auto;
+        text-align: justify;
+        width: fit-content;
     }
 
-    .acolhimento p {
+    .acolhimento .byeText {
         font: var(--tx-sm);
+        max-width: 80%;
     }
 }
 
@@ -74,6 +81,13 @@ dialog {
     background-image: linear-gradient(90deg, #126FEB, #7203E1);
     color: var(--cl-menu);
     font: var(--bnt-cancel-md);
+    cursor: pointer;
+
+    transition: all 250ms ease-in;
+}
+
+.acolhimento .manterAss:hover {
+    transform: scale(1.1) translateY(3px);
 }
 
 .acolhimento .continuarAcolhi {
@@ -86,4 +100,104 @@ dialog {
     background: var(--bg-color-dark);
     border-radius: .5rem;
     color: var(--cl-purple);
+    cursor: pointer;
+    transition: all 240ms ease-in;
+}
+
+.acolhimento .continuarAcolhi:hover {
+    transform: scale(1.1) translateY(3px);
+    color: rgb(0, 0, 0, .3);
+    border: 1px solid transparent;
+}
+
+/* Editando o modal de form */
+
+.titleFeedback {
+    grid-area: B;
+    font: var(--title-sl);
+    text-align: center;
+    padding-inline: 1.3rem;
+    text-transform: uppercase;
+    color: var(--cl-lightblue);
+}
+
+.textFeedback {
+    grid-area: C;
+    text-align: center;
+    margin: auto;
+    width: 76%;
+    font: var(--tx-sm);
+}
+
+.feedbackForm {
+    grid-area: D;
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+    padding: 2rem;
+    border: 1px solid var(--cl-border-form);
+    border-radius: .5rem;
+}
+
+.feedbackForm div {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.feedbackForm div input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 1.4rem;
+    height: 1.4rem;
+    border: 1px solid var(--cl-purple);
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+
+    display: grid;
+    place-content: center;
+    transition: outline 500ms ease;
+}
+
+.feedbackForm div input[type="radio"]:hover {
+    outline: .385rem solid #7203E133;
+}
+
+.feedbackForm div input[type="radio"]::before {
+    content: "";
+    position: absolute;
+    width: .7rem;
+    height: .7rem;
+    border-radius: 50%;
+    transform: scale(0) translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 0 0 10rem var(--cl-purple);
+}
+
+.feedbackForm div input[type="radio"]:checked::before {
+    transform: scale(1) translate(-50%,-50%);
+}
+
+.feedbackForm div label {
+    font: var(--tx-sm);
+}
+
+.feedbackForm div input[type="text"]{
+    padding: .5rem 1rem;
+    border: none;
+    outline: 1px solid var(--cl-border-form);
+    border-radius: .5rem;
+    font: var(--bnt-cancel-sm);
+    color: rgba(0, 0, 0, .7);
+    transition: all 500ms ease;
+}
+
+.feedbackForm div input[type="text"]:focus {
+    outline: 3px solid var(--cl-border-form);
 }

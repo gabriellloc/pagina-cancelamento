@@ -14,8 +14,8 @@ body {
 :root {
     --ff: "Noto Sans", sans-serif;
 
-    --title-large: 700 3rem/1 var(--ff); /* 40px */
-    --title-large-mobile: 700 1.625rem/1 var(--ff); 
+    --title-large: 700 2.5rem/1 var(--ff); /* 40px */
+    --title-sl: 700 1.875rem/1 var(--ff); /* 30px*/
 
     --tx-lg: 600 1.625rem/1 var(--ff); /* 26px*/
     --tx-md: 600 1.25rem/1 var(--ff); /* 20px*/
@@ -32,6 +32,7 @@ body {
     --cl-lightblue: #464EE5;
     --cl-purple: #7203E1;
     --bg-color-dark: #F9F6FC;
+    --cl-border-form: #D9D9D9;
     
 
     /* Nav colors */
