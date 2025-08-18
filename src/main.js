@@ -75,7 +75,7 @@ function Feedback(){
                 <div>
 
                     <input type="radio" name="feedback" id="">
-                    <label for="">Já atingi o meu objetivo</label>
+                    <label for="">Já atingi o meu objetivo.</label>
                 </div>
 
                 <div>
