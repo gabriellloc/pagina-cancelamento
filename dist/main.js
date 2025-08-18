@@ -6,8 +6,7 @@ var modalAcolhimento = document.querySelector("#modal-acolhimento");
 var nav = document.querySelector("#nav");
 var content = document.querySelector("#content");
 var modalContent = document.querySelector("#modalContent");
-var userName = "Olá";
-// let userName = prompt("Qual o seu nome?")
+var userName = prompt("Qual o seu nome?");
 userName = userName.replace(/\d+/g, "");
 while (userName === null || userName === "" || userName === false) {
   userName = prompt("Nome inválido. Tente novamente.");
