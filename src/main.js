@@ -8,7 +8,8 @@ const content = document.querySelector("#content");
 
 const modalContent = document.querySelector("#modalContent");
 
-let userName = prompt("Qual o seu nome?")
+let userName = "Olá"
+// let userName = prompt("Qual o seu nome?")
 userName = userName.replace(/\d+/g, "")
 while (userName === null || userName === "" || userName === false){
     userName = prompt("Nome inválido. Tente novamente.")

@@ -24,7 +24,9 @@ dialog {
     "B B"
     "C C"
     "D D"
-    "E F";
+    "E F"
+    "G G"
+    "H H";
     gap: 1rem;
     padding: 2rem;
 }
@@ -56,20 +58,6 @@ dialog {
     text-align: center;
     margin: auto;
     max-width: 68%;
-}
-
-@media (width < 50em) {
-    .acolhimento .byeUser {
-        font: var(--title-sl);
-        margin: auto;
-        text-align: justify;
-        width: fit-content;
-    }
-
-    .acolhimento .byeText {
-        font: var(--tx-sm);
-        max-width: 80%;
-    }
 }
 
 .acolhimento .manterAss {
@@ -110,6 +98,43 @@ dialog {
     border: 1px solid transparent;
 }
 
+@media (width < 50em) {
+    .acolhimento .logo {
+        display: none;
+    }
+
+    .acolhimento .heart {
+        grid-area: A;
+        width: 3rem;
+        margin: 2rem auto 0;
+    }
+
+    .acolhimento .byeUser {
+        font: var(--title-sl);
+        margin: auto;
+        text-align: center;
+        width: fit-content;
+    }
+
+    .acolhimento .byeText {
+        font: var(--tx-sm);
+        max-width: 70%;
+    }
+
+    .acolhimento .manterAss {
+        font: var(--bnt-cancel-m);
+        grid-area: G;
+        padding: 12px 1rem;
+        margin-inline: auto;
+        margin-block: 0;
+    }
+
+    .acolhimento .continuarAcolhi{
+        grid-area: H;
+        margin: 0 auto;
+    }
+}
+
 /* Editando o modal de form */
 
 .titleFeedback {
@@ -130,6 +155,7 @@ dialog {
 }
 
 .feedbackForm {
+    margin: auto;
     grid-area: D;
     display: flex;
     flex-direction: column;
@@ -137,6 +163,20 @@ dialog {
     padding: 2rem;
     border: 1px solid var(--cl-border-form);
     border-radius: .5rem;
+}
+
+@media (width < 50em) {
+    .feedbackForm {
+        padding-block: 1rem;
+        padding-inline: 0;
+        border: none;
+    }
+    .titleFeedback {
+        font: var(--title-ssl);
+    }
+    .textFeedback{
+        width: 100%;
+    }
 }
 
 .feedbackForm div {
@@ -149,8 +189,8 @@ dialog {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    width: 1.4rem;
-    height: 1.4rem;
+    min-width: 1.4rem;
+    min-height: 1.4rem;
     border: 1px solid var(--cl-purple);
     border-radius: 50%;
     display: inline-block;

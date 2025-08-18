@@ -16,12 +16,14 @@ body {
 
     --title-large: 700 2.5rem/1 var(--ff); /* 40px */
     --title-sl: 700 1.875rem/1 var(--ff); /* 30px*/
+    --title-ssl: 700 1.5rem/1 var(--ff); /* */
 
     --tx-lg: 600 1.625rem/1 var(--ff); /* 26px*/
     --tx-md: 600 1.25rem/1 var(--ff); /* 20px*/
     --tx-sm: 600 1rem/1 var(--ff); /* 16px */
 
     --bnt-cancel-sm: 500 .875rem/1 var(--ff); /* 8px */
+    --bnt-cancel-m: 500 1rem/1 var(--ff);
     --bnt-cancel-md: 500 1.2rem/1 var(--ff); /* 19,2 */
 
     /* Colors */
