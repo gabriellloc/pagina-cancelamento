@@ -10,7 +10,7 @@ const modalContent = document.querySelector("#modalContent");
 
 // Colocando um nome qualquer na aplicação
 // let userName = prompt("Qual o seu nome?")
-let userName = " "
+let userName = "Isadora"
 
 userName = userName.replace(/\d+/g, "")
 while (userName === null || userName === "" || userName === false){
@@ -128,7 +128,7 @@ function offers(){
 
         // Caso o usuário não coloque nenhum valor no form
         if (inputValue === null && textValue == ""){
-            return console.log("Nada")
+            return alert("Preencha os dados.")
         }
 
         // Criando o elemento de oferta
@@ -146,17 +146,40 @@ function offers(){
                 <h3>E se você apenas pausasse seu acesso?</h3>
                 <p>Você pode congelar sua assinatura por até 60 dias, sem perder seu histórico de progresso ou certificados.</p>
                 <div class="flex">
-                    <button class="acceptOffer">Aceitar</button>
-                    <button class="recuseOffer">Recusar</button>
+                    <button class="acceptOffer" id="acceptOfferBnt">Aceitar</button>
+                    <button class="recuseOffer" id="recuseOfferBnt">Recusar</button>
                 </div>
             `
+
+            // Adiciona as informações no modal
             offers.append(divTimeOut)
+            // Adiciona o modal de ofertas no body
             document.body.append(offers)
+            // Aplica um efeito de blur no modal principal
             modalAcolhimento.classList.add("blur")
+
+            // Faz o modal de ofertas aparecer na tela.
             offers.showModal()
+
+            // Caso ele recuse a oferta
+            const recuseOfferBnt = document.querySelector("#recuseOfferBnt")
+            recuseOfferBnt.addEventListener("click", () => {
+                modalAcolhimento.classList.remove("blur")
+                offers.remove()
+                rememberBenefits()
+            })
+
+            const acceptOfferBnt = document.querySelector("#acceptOfferBnt")
+            acceptOfferBnt.addEventListener("click", () => {
+                
+            })
         }
 
-        // Efeito de blur no modal principal
+        else if () {
+            
+        }
+
+        // Remove o efeito de blur no modal principal
         offers.addEventListener("close", ()=> {
             modalAcolhimento.classList.remove("blur")
         })
@@ -167,7 +190,13 @@ function offers(){
     })
 }
 
-// Botao de manter Assinatura funcional
+function rememberBenefits(){
+    modalContent.innerHTML = `
+
+    `
+}
+
+// Botão de manter Assinatura
 function keepSubscription(){
     const keepSub = document.querySelectorAll(".keepSub");
     keepSub.forEach(btn => {
