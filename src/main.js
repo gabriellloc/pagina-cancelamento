@@ -67,7 +67,7 @@ function Feedback(){
                 </div>
 
                 <div>
-                    <input type="radio" name="feedback" id="financial">
+                    <input type="radio" name="feedback" id="financial" value="financial">
                     <label for="financial">Questões financeira.</label>
                 </div>
 
@@ -169,30 +169,68 @@ function offers(){
                 rememberBenefits()
             })
 
+            // Caso ele aceite a oferta.
             const acceptOfferBnt = document.querySelector("#acceptOfferBnt")
             acceptOfferBnt.addEventListener("click", () => {
-                
+                modalAcolhimento.classList.remove("blur")
+                modalAcolhimento.close()
+                offers.remove()
+
+                // Parte de aceite de oferta
             })
         }
 
-        else if () {
+        // Caso o motivo seja financeiro
+        else if (inputValue.value == "financial") {
+            const divFinancial = document.createElement("div")
+            divFinancial.classList.add("divTimeOut")
+            divFinancial.innerHTML = `
+                <h3>Aprender não precisa pesar no bolso.</h3>
+                <p>Podemos oferecer 50% OFF por 2 meses para que você continue estudando enquanto se reorganiza.</p>
+                <div class="flex">
+                    <button class="acceptOffer" id="acceptOfferBnt">Aceitar</button>
+                    <button class="recuseOffer" id="recuseOfferBnt">Recusar</button>
+                </div>
+            `
+            // Adiciona as informações no modal
+            offers.append(divFinancial)
+            // Adiciona o modal de ofertas no body
+            document.body.append(offers)
+            // Aplica um efeito de blur no modal principal
+            modalAcolhimento.classList.add("blur")
             
+            // Remove o efeito de blur no modal principal
+            offers.addEventListener("close", ()=> {
+                modalAcolhimento.classList.remove("blur")
+            })
+            
+            // Faz o modal de ofertas aparecer na tela.
+            offers.showModal()
+            
+            // Caso ele recuse a oferta
+            const recuseOfferBnt = document.querySelector("#recuseOfferBnt")
+            recuseOfferBnt.addEventListener("click", () => {
+                modalAcolhimento.classList.remove("blur")
+                offers.remove()
+                rememberBenefits()
+            })
+            
+            // Caso ele aceite a oferta
+            const acceptOfferBnt = document.querySelector("#acceptOfferBnt")
+            acceptOfferBnt.addEventListener("click", () => {
+                modalAcolhimento.classList.remove("blur")
+                modalAcolhimento.close()
+                offers.remove()
+                
+                // Parte de aceite de oferta
+            })
         }
-
-        // Remove o efeito de blur no modal principal
-        offers.addEventListener("close", ()=> {
-            modalAcolhimento.classList.remove("blur")
-        })
-        
-        // document.body.append(offers)
-        // offers.showModal()
-
     })
 }
 
 function rememberBenefits(){
     modalContent.innerHTML = `
-
+        <div></div>
     `
 }
 
