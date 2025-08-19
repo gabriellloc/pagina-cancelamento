@@ -8,9 +8,9 @@ const content = document.querySelector("#content");
 
 const modalContent = document.querySelector("#modalContent");
 
-// Colocando um nome qualquer na aplicacao
-let userName = prompt("Qual o seu nome?")
-// let userName = " "
+// Colocando um nome qualquer na aplicação
+// let userName = prompt("Qual o seu nome?")
+let userName = " "
 
 userName = userName.replace(/\d+/g, "")
 while (userName === null || userName === "" || userName === false){
@@ -113,7 +113,7 @@ function offers(){
         }
     })
 
-    // Removendo a opcao de texto caso haja um radio marcado
+    // Removendo a opção de texto caso haja um radio marcado
     const inputRadios = document.querySelectorAll("input[name='feedback']");
     inputRadios.forEach(inp => {
         inp.addEventListener("click", () => {
