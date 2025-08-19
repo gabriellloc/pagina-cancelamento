@@ -9,8 +9,8 @@ const content = document.querySelector("#content");
 const modalContent = document.querySelector("#modalContent");
 
 // Colocando um nome qualquer na aplicacao
-// let userName = prompt("Qual o seu nome?")
-let userName = " "
+let userName = prompt("Qual o seu nome?")
+// let userName = " "
 
 userName = userName.replace(/\d+/g, "")
 while (userName === null || userName === "" || userName === false){
@@ -118,6 +118,7 @@ function offers(){
     inputRadios.forEach(inp => {
         inp.addEventListener("click", () => {
             inputValueText.value = ""
+            textValue = ""
         })
     })
 
@@ -135,7 +136,7 @@ function offers(){
         offers.classList.add("offers")
 
         if (textValue != ""){
-
+            console.log("Mandou texto")
         }
 
         else if (inputValue.value == "noTime"){
