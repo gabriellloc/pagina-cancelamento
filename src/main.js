@@ -9,7 +9,8 @@ const content = document.querySelector("#content");
 const modalContent = document.querySelector("#modalContent");
 
 // Colocando um nome qualquer na aplicacao
-let userName = prompt("Qual o seu nome?")
+// let userName = prompt("Qual o seu nome?")
+let userName = " "
 
 userName = userName.replace(/\d+/g, "")
 while (userName === null || userName === "" || userName === false){
@@ -61,35 +62,107 @@ function Feedback(){
                 </div>
 
                 <div>
-                    <input type="radio" name="feedback" id="">
-                    <label for="">Falta de tempo.</label>
+                    <input type="radio" name="feedback" id="noTime" value="noTime">
+                    <label for="noTime">Falta de tempo.</label>
                 </div>
 
                 <div>
-                    <input type="radio" name="feedback" id="">
-                    <label for="">Questões financeira.</label>
+                    <input type="radio" name="feedback" id="financial">
+                    <label for="financial">Questões financeira.</label>
                 </div>
 
                 <div>
-                    <input type="radio" name="feedback" id="">
-                    <label for="">Conteúdo não atendeu às minhas necessidades.</label>
+                    <input type="radio" name="feedback" id="needs">
+                    <label for="needs">Conteúdo não atendeu às minhas necessidades.</label>
                 </div>
                 <div>
 
-                    <input type="radio" name="feedback" id="">
-                    <label for="">Já atingi o meu objetivo.</label>
+                    <input type="radio" name="feedback" id="objective">
+                    <label for="objective">Já atingi o meu objetivo.</label>
                 </div>
 
                 <div>
-                    <label for="">Outro motivo:</label>
-                    <input type="text">
+                    <label for="Other">Outro motivo:</label>
+                    <input type="text" id="Other" value="">
                 </div>
             </form>
 
             <button class="manterAss keepSub">Manter Assinatura</button>
             <button class="continuarAcolhi" id="bntFeedBack">Continuar</button>
         `
-        keepSubscription()
+        keepSubscription();
+        offers();
+    })
+}
+
+// Ofertas na tela.
+function offers(){
+    // Pegando o botão que abre a página de ofertas
+    const bntFeedBack = document.querySelector("#bntFeedBack")
+
+    // Pegando o input de texto caso o usuário escolha digitar
+    const inputValueText = document.querySelector("#Other")
+    let textValue = ""
+    inputValueText.addEventListener("input", () => {
+        const inputValue = document.querySelector("input[name='feedback']:checked");
+        textValue = inputValueText.value
+
+        // Desmarca caso o usuário tenha marcado um radio
+        if (inputValue != null){
+            inputValue.checked = false
+        }
+    })
+
+    // Removendo a opcao de texto caso haja um radio marcado
+    const inputRadios = document.querySelectorAll("input[name='feedback']");
+    inputRadios.forEach(inp => {
+        inp.addEventListener("click", () => {
+            inputValueText.value = ""
+        })
+    })
+
+    // Abre a oferta de acordo com o click do usuário
+    bntFeedBack.addEventListener("click", () => {
+        const inputValue = document.querySelector("input[name='feedback']:checked");
+
+        // Caso o usuário não coloque nenhum valor no form
+        if (inputValue === null && textValue == ""){
+            return console.log("Nada")
+        }
+
+        // Criando o elemento de oferta
+        const offers = document.createElement("dialog")
+        offers.classList.add("offers")
+
+        if (textValue != ""){
+
+        }
+
+        else if (inputValue.value == "noTime"){
+            const divTimeOut = document.createElement("div")
+            divTimeOut.classList.add("divTimeOut")
+            divTimeOut.innerHTML = `
+                <h3>E se você apenas pausasse seu acesso?</h3>
+                <p>Você pode congelar sua assinatura por até 60 dias, sem perder seu histórico de progresso ou certificados.</p>
+                <div class="flex">
+                    <button class="acceptOffer">Aceitar</button>
+                    <button class="recuseOffer">Recusar</button>
+                </div>
+            `
+            offers.append(divTimeOut)
+            document.body.append(offers)
+            modalAcolhimento.classList.add("blur")
+            offers.showModal()
+        }
+
+        // Efeito de blur no modal principal
+        offers.addEventListener("close", ()=> {
+            modalAcolhimento.classList.remove("blur")
+        })
+        
+        // document.body.append(offers)
+        // offers.showModal()
+
     })
 }
 
