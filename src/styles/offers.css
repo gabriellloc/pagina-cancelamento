@@ -89,6 +89,7 @@
         justify-items: space-around;
         gap: .5rem;
         padding-inline: .5rem;
+        /* width: 100%; */
     }
 }
 
@@ -97,7 +98,8 @@
     margin: auto;
 }
 
-@media (width < 60em) {
+@media (width < 50em) {
     .divTimeOut img{
+        width: 100%;
     }
 }

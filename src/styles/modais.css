@@ -47,7 +47,7 @@ dialog {
     font: var(--title-large);
     letter-spacing: 1px;
     color: var(--cl-lightblue);
-    text-align: justify;
+    text-align: center;
     margin: auto;
 }
 
