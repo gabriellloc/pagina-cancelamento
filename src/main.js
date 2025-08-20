@@ -72,7 +72,7 @@ function Feedback(){
                 </div>
 
                 <div>
-                    <input type="radio" name="feedback" id="needs">
+                    <input type="radio" name="feedback" id="needs" value="needs">
                     <label for="needs">Conteúdo não atendeu às minhas necessidades.</label>
                 </div>
                 <div>
@@ -94,6 +94,8 @@ function Feedback(){
         offers();
     })
 }
+
+
 
 // Ofertas na tela.
 function offers(){
@@ -136,7 +138,8 @@ function offers(){
         offers.classList.add("offers")
 
         if (textValue != ""){
-            console.log("Mandou texto")
+            console.log(textValue)
+            rememberBenefits()
         }
 
         else if (inputValue.value == "noTime"){
@@ -194,6 +197,56 @@ function offers(){
             `
             // Adiciona as informações no modal
             offers.append(divFinancial)
+            // Adiciona o modal de ofertas no body
+            document.body.append(offers)
+            // Aplica um efeito de blur no modal principal
+            modalAcolhimento.classList.add("blur")
+            
+            // Remove o efeito de blur no modal principal
+            offers.addEventListener("close", ()=> {
+                modalAcolhimento.classList.remove("blur")
+            })
+            
+            // Faz o modal de ofertas aparecer na tela.
+            offers.showModal()
+            
+            // Caso ele recuse a oferta
+            const recuseOfferBnt = document.querySelector("#recuseOfferBnt")
+            recuseOfferBnt.addEventListener("click", () => {
+                modalAcolhimento.classList.remove("blur")
+                offers.remove()
+                rememberBenefits()
+            })
+            
+            // Caso ele aceite a oferta
+            const acceptOfferBnt = document.querySelector("#acceptOfferBnt")
+            acceptOfferBnt.addEventListener("click", () => {
+                modalAcolhimento.classList.remove("blur")
+                modalAcolhimento.close()
+                offers.remove()
+                
+                // Parte de aceite de oferta
+            })
+        }
+
+        else if (inputValue.value == "needs"){
+            const divNeeds = document.createElement("div")
+            divNeeds.classList.add("divTimeOut")
+            divNeeds.innerHTML = `
+                <h3>Trilha recomendada baseada no seu histórico + 10% ou mais de desconto</h3>
+                <p class="imgsNeeds">
+                    <img src="src/assets/imgs/ENGPLAY_CAPACURSO_REVIT_1-1 1.png" alt="">
+                    <img src="src/assets/imgs/ENGPLAY_CAPACURSO_COMBATEINCENDIO 1.png" alt="">
+                    <img src="src/assets/imgs/ENGPLAY_CAPACURSO_COMBATEINCENDIO_DO_PROJETO_A_APROVACAO 2.png" alt="">
+                    <img src="src/assets/imgs/ENGPLAY_CAPA-CRIANDO-PORTIFOLIOS.png" alt="">
+                </p>
+                <div class="flex">
+                    <button class="acceptOffer" id="acceptOfferBnt">Aceitar</button>
+                    <button class="recuseOffer" id="recuseOfferBnt">Recusar</button>
+                </div>
+            `
+            // Adiciona as informações no modal
+            offers.append(divNeeds)
             // Adiciona o modal de ofertas no body
             document.body.append(offers)
             // Aplica um efeito de blur no modal principal

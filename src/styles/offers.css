@@ -74,3 +74,30 @@
     border: 1px solid var(--cl-lightblue);
     background: var(--bg-color-dark);
 }
+
+.divTimeOut .imgsNeeds {
+    display: flex;
+    gap: .5rem;
+    justify-content: space-evenly;
+    padding-block: 1.4rem;
+}
+
+@media (width < 60em) {
+    .divTimeOut .imgsNeeds {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: space-around;
+        gap: .5rem;
+        padding-inline: .5rem;
+    }
+}
+
+.divTimeOut img {
+    border-radius: .5rem;
+    margin: auto;
+}
+
+@media (width < 60em) {
+    .divTimeOut img{
+    }
+}
