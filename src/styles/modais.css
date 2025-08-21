@@ -12,8 +12,8 @@ dialog {
 
 @media (width < 80em) {
     dialog#modal-acolhimento {
-        min-width: 80%;
-        min-height: 50%;
+        min-width: 70%;
+        min-height: fit-content;
     }
 }
 
@@ -60,7 +60,7 @@ dialog {
     max-width: 68%;
 }
 
-.manterAss {
+.acolhimento .manterAss {
     grid-area: E;
     width: fit-content;
     margin: 1rem auto;
@@ -245,10 +245,12 @@ dialog {
 /* Parte dos benefícios perdidos */
 
 .rememberBenefits {
+    height: fit-content;
     display: flex;
     flex-direction: column;
     gap: .875rem;
     position: relative;
+    grid-row: 1/8;
 }
 
 .rememberBenefits img[alt="Logo"]{
@@ -304,4 +306,9 @@ dialog {
 #back {
     position: absolute;
     cursor: pointer;
+}
+
+.rememberBenefits div:nth-child(6) {
+    display: flex;
+    justify-content: space-between;
 }

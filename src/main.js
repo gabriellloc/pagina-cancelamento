@@ -286,6 +286,7 @@ function offers(){
 }
 
 function rememberBenefits(){
+    
     modalContent.innerHTML = `
         <div class="rememberBenefits">
             <img src="src/assets/icons/logo (ENGPLAY).svg" alt="Logo">
