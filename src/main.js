@@ -41,7 +41,7 @@ cancel.addEventListener("click", ()=> {
 })
 
 // Removendo os efeitos quando o modal for fechado.
-modalAcolhimento.addEventListener("close", (event)=> {
+modalAcolhimento.addEventListener("close", ()=> {
     nav.classList.remove("blur")
     content.classList.remove("blur")
 })
@@ -95,8 +95,6 @@ function Feedback(){
     })
 }
 
-
-
 // Ofertas na tela.
 function offers(){
     // Pegando o botão que abre a página de ofertas
@@ -125,6 +123,7 @@ function offers(){
     })
 
     // Abre a oferta de acordo com o click do usuário
+
     bntFeedBack.addEventListener("click", () => {
         const inputValue = document.querySelector("input[name='feedback']:checked");
 
@@ -133,8 +132,10 @@ function offers(){
             return alert("Preencha os dados.")
         }
 
-        // Criando o elemento de oferta
+        // Cria o elemento de ofertas.
         const offers = document.createElement("dialog")
+
+        // Criando o elemento de oferta
         offers.classList.add("offers")
 
         if (textValue != ""){
@@ -142,6 +143,7 @@ function offers(){
             rememberBenefits()
         }
 
+        // Caso o motivo seja "Sem tempo"
         else if (inputValue.value == "noTime"){
             const divTimeOut = document.createElement("div")
             divTimeOut.classList.add("divTimeOut")
@@ -183,7 +185,7 @@ function offers(){
             })
         }
 
-        // Caso o motivo seja financeiro
+        // Caso o motivo seja "financeiro"
         else if (inputValue.value == "financial") {
             const divFinancial = document.createElement("div")
             divFinancial.classList.add("divTimeOut")
@@ -229,6 +231,7 @@ function offers(){
             })
         }
 
+        // Caso o motivo seja "Nao atendeu as necessidades"
         else if (inputValue.value == "needs"){
             const divNeeds = document.createElement("div")
             divNeeds.classList.add("divTimeOut")
@@ -275,8 +278,11 @@ function offers(){
                 modalAcolhimento.close()
                 offers.remove()
                 
-                // Parte de aceite de oferta
             })
+        }
+
+        else {
+            rememberBenefits()
         }
     })
 }
