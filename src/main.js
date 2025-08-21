@@ -37,7 +37,8 @@ cancel.addEventListener("click", ()=> {
     `
 
     keepSubscription()
-    Feedback()
+    const bntEtp1 = document.querySelector("#bntEtp1");
+    bntEtp1.addEventListener("click", () => {Feedback()})
 })
 
 // Removendo os efeitos quando o modal for fechado.
@@ -49,8 +50,6 @@ modalAcolhimento.addEventListener("close", ()=> {
 
 // Criando o form
 function Feedback(){
-    const bntEtp1 = document.querySelector("#bntEtp1");
-    bntEtp1.addEventListener("click", () =>{
     modalContent.innerHTML = `
             <img src="src/assets/icons/logo (ENGPLAY).svg" alt="Logo" class="logo">
             <h1 class="titleFeedback">Podemos ouvir você rapidinho?</h1>
@@ -92,7 +91,6 @@ function Feedback(){
         `
         keepSubscription();
         offers();
-    })
 }
 
 // Ofertas na tela.
@@ -289,8 +287,35 @@ function offers(){
 
 function rememberBenefits(){
     modalContent.innerHTML = `
-        <div></div>
+        <div class="rememberBenefits">
+            <img src="src/assets/icons/logo (ENGPLAY).svg" alt="Logo">
+            <h1>Você está prestes a perder todos os seus benefícios</h1>
+            <p>Cancelando sua inscrição hoje, vocês deixará de ter acesso aos cursos de:</p>
+            <div>
+                <img src="src/assets/imgs/etp-2-leitura-e-interpretacao.png" alt="Curso de leitura e interpretação de projetos estruturais">
+                <img src="src/assets/imgs/etp-2-instalacoes-hidrossanitarias.png" alt="Curso de instalações Hidrossanitárias">
+                <img src="src/assets/imgs/etp-2-projeto-hidrossanitario.png" alt="Curso de projeto Hidrossanitário.">
+                <img src="src/assets/imgs/etp-2-combate-a-incendio.png" alt="Curso de projeto de combate a incêndio">
+            </div>
+            <ul>
+                <li><span class="blue">+ </span>Comunidade exclusiva de networking</li>
+                <li><span class="blue">+ </span>Mais de 40 cursos completos</li>
+                <li><span class="blue">+ </span>Banco de vagas de emprego</li>
+                <li><span class="blue">+ </span>Seu progresso salvo e disponível a qualquer momento</li>
+                <li><span class="blue">+ </span>Planilhas e templates</li>
+                <li><span class="blue">+ </span>Suporte e mentorias com especialistas</li>
+            </ul>
+            <div>
+                <button class="manterAss keepSub">Manter Assinatura</button>
+                <button class="continuarAcolhi">Continuar</button>
+            </div>
+            <button id="back">
+                <img src="src/assets/icons/ic_outline-arrow-back.svg" alt="Botão de voltar">
+            </button>
+        </div>
     `
+    keepSubscription()
+    backArrow()
 }
 
 // Botão de manter Assinatura
@@ -300,5 +325,13 @@ function keepSubscription(){
         btn.addEventListener("click", () => { 
             modalAcolhimento.close(); 
         });
+    })
+}
+
+// Botao de voltar
+function backArrow() {
+    const back = document.querySelector("#back")
+    back.addEventListener("click", () => {
+        Feedback();
     })
 }

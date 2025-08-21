@@ -12,6 +12,12 @@ body {
     height: 100vh;
 }
 
+@media (height >= 650px) {
+    body {
+        overflow: hidden;
+    }
+}
+
 :root {
     --ff: "Noto Sans", sans-serif;
 
@@ -53,6 +59,14 @@ button {
     border: none;
     background: none;
     appearance: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.blue {
+    color: var(--cl-lightblue);
 }
 
 .flex {

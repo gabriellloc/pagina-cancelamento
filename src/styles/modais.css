@@ -60,7 +60,7 @@ dialog {
     max-width: 68%;
 }
 
-.acolhimento .manterAss {
+.manterAss {
     grid-area: E;
     width: fit-content;
     margin: 1rem auto;
@@ -71,14 +71,14 @@ dialog {
     font: var(--bnt-cancel-md);
     cursor: pointer;
 
-    transition: all 250ms ease-in;
+    transition: all 300ms ease-in;
 }
 
-.acolhimento .manterAss:hover {
+.manterAss:hover {
     transform: scale(1.1) translateY(3px);
 }
 
-.acolhimento .continuarAcolhi {
+.continuarAcolhi {
     grid-area: F;
     width: fit-content;
     padding: 12px 1rem;
@@ -89,11 +89,11 @@ dialog {
     border-radius: .5rem;
     color: var(--cl-purple);
     cursor: pointer;
-    transition: all 240ms ease-in;
+    transition: all 300ms ease-in;
 }
 
-.acolhimento .continuarAcolhi:hover {
-    transform: scale(1.1) translateY(3px);
+.continuarAcolhi:hover {
+    transform: scale(1.09) translateY(3px);
     color: rgb(0, 0, 0, .3);
     border: 1px solid transparent;
 }
@@ -240,4 +240,68 @@ dialog {
 
 .feedbackForm div input[type="text"]:focus {
     outline: 3px solid var(--cl-border-form);
+}
+
+/* Parte dos benefícios perdidos */
+
+.rememberBenefits {
+    display: flex;
+    flex-direction: column;
+    gap: .875rem;
+    position: relative;
+}
+
+.rememberBenefits img[alt="Logo"]{
+    width: 10%;
+    margin: 1rem auto;
+}
+
+.rememberBenefits h1 {
+    font: var(--title-sl);
+    color: var(--cl-lightblue);
+    text-align: center;
+}
+
+.rememberBenefits p {
+    font: var(--tx-sm);
+    color: var(--cl-black);
+    text-align: center;
+}
+
+.rememberBenefits div:nth-child(4){
+    display: flex;
+    justify-content: space-around;
+    gap: .2rem;
+    margin: .5rem;
+}
+
+@media (width < 60em) {
+    .rememberBenefits div:nth-child(4) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: space-around;
+        gap: .5rem;
+        padding-inline: .5rem;
+    }
+}
+
+.rememberBenefits img[src*="etp-2"] {
+    margin: auto;
+}
+
+.rememberBenefits ul {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+
+.rememberBenefits li {
+    color: var(--cl-black);
+    font: var(--tx-sm);
+}
+
+#back {
+    position: absolute;
+    cursor: pointer;
 }
