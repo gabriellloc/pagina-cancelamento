@@ -305,13 +305,13 @@ dialog {
     justify-content: space-between;
 }
 
-@media (width < 60em) {
+@media (width < 50em) {
     .rememberBenefits div:nth-child(4) {
         display: grid;
+        width: 100%;
+        margin: auto;
         grid-template-columns: 1fr 1fr;
-        justify-items: space-around;
-        gap: .5rem;
-        padding-inline: .5rem;
+        /* border: solid; */
     }
 
     .rememberBenefits h1{
@@ -322,8 +322,9 @@ dialog {
         font: var(--tx-sm);
     }
 
-    .rememberBenefits img[src*="etp-2"] {
-        width: 100%;
+    .rememberBenefits div img[src*="etp-2"] {
+        width: 80%;
+        /* border: solid; */
     }
 
     .rememberBenefits div:nth-child(6){

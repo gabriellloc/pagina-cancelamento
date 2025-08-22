@@ -7,22 +7,23 @@
 }
 
 body {
-    /* overflow: hidden; */
+    overflow: hidden;
     background-color: var(--bg-color-dark);
     height: 100vh;
 }
 
-@media (height >= 650px) {
+@media (height <= 650px) {
     body {
         overflow-x: hidden;
+        overflow-y: auto;
     }
 }
 
-@media (height >= 60em) {
+/* @media (height >= 60em) {
     body {
         overflow: hidden;
     }
-}
+} */
 
 :root {
     --ff: "Noto Sans", sans-serif;
