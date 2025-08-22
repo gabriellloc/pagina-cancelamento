@@ -54,6 +54,9 @@ modalAcolhimento.addEventListener("close", ()=> {
 
 // Criando o form
 function Feedback(){
+    modalAcolhimento.innerHTML = ""
+    const modalContent = document.createElement("div")
+    modalContent.classList.add("acolhimento")
     modalContent.innerHTML = `
             <img src="src/assets/icons/logo (ENGPLAY).svg" alt="Logo" class="logo">
             <h1 class="titleFeedback">Podemos ouvir você rapidinho?</h1>
@@ -93,6 +96,8 @@ function Feedback(){
             <button class="manterAss keepSub">Manter Assinatura</button>
             <button class="continuarAcolhi" id="bntFeedBack">Continuar</button>
         `
+
+        modalAcolhimento.appendChild(modalContent)
         keepSubscription();
         offers();
 }
@@ -291,7 +296,7 @@ function offers(){
 
 function rememberBenefits(){
     const rememberBenefitsDiv = document.createElement("div")
-    modalAcolhimento.removeChild(modalContent)
+    modalAcolhimento.innerHTML = ``
     rememberBenefitsDiv.innerHTML = `
         <div class="rememberBenefits">
             <img src="src/assets/icons/logo (ENGPLAY).svg" alt="Logo">
@@ -315,7 +320,7 @@ function rememberBenefits(){
                 <button class="manterAss keepSub">Manter Assinatura</button>
                 <button class="continuarAcolhi" id="detailsContinue">Continuar</button>
             </div>
-            <button id="back">
+            <button id="back" class="backk">
                 <img src="src/assets/icons/ic_outline-arrow-back.svg" alt="Botão de voltar">
             </button>
         </div>
@@ -352,8 +357,10 @@ function keepSubscription(){
 
 // Botão de voltar
 function backArrow() {
-    const back = document.querySelector("#back")
-    back.addEventListener("click", () => {
-        Feedback();
+    const back = document.querySelectorAll(".backk")
+    back.forEach(bnt  => {
+        bnt.addEventListener("click", () => {
+            Feedback()
+        })
     })
 }
