@@ -18,6 +18,12 @@ body {
     }
 }
 
+@media (height >= 60em) {
+    body {
+        overflow: hidden;
+    }
+}
+
 :root {
     --ff: "Noto Sans", sans-serif;
 
