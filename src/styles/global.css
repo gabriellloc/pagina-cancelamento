@@ -14,7 +14,7 @@ body {
 
 @media (height >= 650px) {
     body {
-        overflow: hidden;
+        overflow-x: hidden;
     }
 }
 
