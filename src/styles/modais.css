@@ -13,7 +13,7 @@ dialog {
 @media (width < 80em) {
     dialog#modal-acolhimento {
         min-width: 80%;
-        min-height: fit-content;
+        min-height: 80%;
     }
 }
 
