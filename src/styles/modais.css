@@ -319,7 +319,8 @@ dialog {
     }
 
     .rememberBenefits p {
-        font: var(--tx-sm);
+        font: var(--tx-ss);
+
     }
 
     .rememberBenefits div img[src*="etp-2"] {
@@ -334,5 +335,9 @@ dialog {
     
     .rememberBenefits img[alt="Logo"]{
         width: 20%;
+    }
+
+    .rememberBenefits li {
+        font: var(--tx-ss);
     }
 }
