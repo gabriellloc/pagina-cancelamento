@@ -12,7 +12,7 @@ dialog {
 
 @media (width < 80em) {
     dialog#modal-acolhimento {
-        min-width: 70%;
+        min-width: 80%;
         min-height: fit-content;
     }
 }
@@ -245,7 +245,9 @@ dialog {
 /* Parte dos benefícios perdidos */
 
 .rememberBenefits {
+    width: fit-content;
     height: fit-content;
+    margin: auto;
     display: flex;
     flex-direction: column;
     gap: .875rem;
@@ -277,16 +279,6 @@ dialog {
     margin: .5rem;
 }
 
-@media (width < 60em) {
-    .rememberBenefits div:nth-child(4) {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        justify-items: space-around;
-        gap: .5rem;
-        padding-inline: .5rem;
-    }
-}
-
 .rememberBenefits img[src*="etp-2"] {
     margin: auto;
 }
@@ -311,4 +303,35 @@ dialog {
 .rememberBenefits div:nth-child(6) {
     display: flex;
     justify-content: space-between;
+}
+
+@media (width < 60em) {
+    .rememberBenefits div:nth-child(4) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: space-around;
+        gap: .5rem;
+        padding-inline: .5rem;
+    }
+
+    .rememberBenefits h1{
+        font: var(--title-sssl);
+    }
+
+    .rememberBenefits p {
+        font: var(--tx-sm);
+    }
+
+    .rememberBenefits img[src*="etp-2"] {
+        width: 100%;
+    }
+
+    .rememberBenefits div:nth-child(6){
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .rememberBenefits img[alt="Logo"]{
+        width: 20%;
+    }
 }
