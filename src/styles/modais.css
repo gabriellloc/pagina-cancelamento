@@ -246,18 +246,17 @@ dialog {
 
 .rememberBenefits {
     width: fit-content;
-    height: fit-content;
     margin: auto;
     display: flex;
     flex-direction: column;
     gap: .875rem;
     position: relative;
-    grid-row: 1/8;
+    /* grid-area: A; */
 }
 
 .rememberBenefits img[alt="Logo"]{
     width: 10%;
-    margin: 1rem auto;
+    margin: .5rem auto;
 }
 
 .rememberBenefits h1 {
@@ -340,4 +339,8 @@ dialog {
     .rememberBenefits li {
         font: var(--tx-ss);
     }
+}
+
+.titleDetails {
+    grid-area: B;
 }

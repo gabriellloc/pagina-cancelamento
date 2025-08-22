@@ -6,7 +6,6 @@ const modalAcolhimento = document.querySelector("#modal-acolhimento");
 const nav = document.querySelector("#nav");
 const content = document.querySelector("#content");
 
-const modalContent = document.querySelector("#modalContent");
 
 // Colocando um nome qualquer na aplicação
 // let userName = prompt("Qual o seu nome?")
@@ -22,6 +21,11 @@ userName = userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase();
 
 // Abrindo o modal e aplicando os efeitos de fundo.
 cancel.addEventListener("click", ()=> {
+    modalAcolhimento.innerHTML = ``
+    const modalContent = document.createElement("div")
+    modalContent.classList.add("acolhimento")
+    modalContent.setAttribute("id", "modalContent")
+    modalAcolhimento.appendChild(modalContent)
     modalAcolhimento.showModal();
     nav.classList.add("blur")
     content.classList.add("blur")
@@ -286,8 +290,9 @@ function offers(){
 }
 
 function rememberBenefits(){
-    
-    modalContent.innerHTML = `
+    const rememberBenefitsDiv = document.createElement("div")
+    modalAcolhimento.removeChild(modalContent)
+    rememberBenefitsDiv.innerHTML = `
         <div class="rememberBenefits">
             <img src="src/assets/icons/logo (ENGPLAY).svg" alt="Logo">
             <h1>Você está prestes a perder todos os seus benefícios</h1>
@@ -308,15 +313,31 @@ function rememberBenefits(){
             </ul>
             <div>
                 <button class="manterAss keepSub">Manter Assinatura</button>
-                <button class="continuarAcolhi">Continuar</button>
+                <button class="continuarAcolhi" id="detailsContinue">Continuar</button>
             </div>
             <button id="back">
                 <img src="src/assets/icons/ic_outline-arrow-back.svg" alt="Botão de voltar">
             </button>
         </div>
     `
+    modalAcolhimento.appendChild(rememberBenefitsDiv)
     keepSubscription()
     backArrow()
+    const detailsContinue = document.querySelector("#detailsContinue")
+    detailsContinue.addEventListener("click", () => {
+        detailsModal()
+    })
+
+    
+}
+
+function detailsModal(){
+    modalAcolhimento.innerHTML = ""
+    const detailsDiv = document.createElement("div")
+    
+    detailsDiv.innerHTML = `Olá`
+
+    modalAcolhimento.appendChild(detailsDiv)
 }
 
 // Botão de manter Assinatura
@@ -329,7 +350,7 @@ function keepSubscription(){
     })
 }
 
-// Botao de voltar
+// Botão de voltar
 function backArrow() {
     const back = document.querySelector("#back")
     back.addEventListener("click", () => {

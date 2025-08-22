@@ -42,7 +42,7 @@
     color: var(--cl-menu);
 }
 
-.dad .childs:last-child {
+.dad .childs:nth-child(11) {
     border-top: 2px solid var(--cl-menu);
     padding-top: 1rem;
 }
