@@ -1,119 +1,137 @@
 "use strict";
 
+let userName = "Isabela santos"
+
 // Obtendo as Variáveis
-const cancel = document.querySelector("#cancel");
-const modalAcolhimento = document.querySelector("#modal-acolhimento");
+// Botão de cancelar a assinatura
+const bntCancel = document.querySelector("#cancel")
+
+// Modal
+const modal = document.querySelector("#modal-acolhimento")
+
+// Pegando o content/body para aplicar o efeito
 const nav = document.querySelector("#nav");
 const content = document.querySelector("#content");
 
-
-// Colocando um nome qualquer na aplicação
-// let userName = prompt("Qual o seu nome?")
-let userName = "Jamilson Neves"
-
-userName = userName.replace(/\d+/g, "")
-while (userName === null || userName === "" || userName === false){
-    userName = prompt("Nome inválido. Tente novamente.")
-}
-
-userName = userName.trim();
-userName = userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase();
-
-// Abrindo o modal e aplicando os efeitos de fundo.
-cancel.addEventListener("click", ()=> {
-    modalAcolhimento.innerHTML = ``
-    const modalContent = document.createElement("div")
-    modalContent.classList.add("acolhimento")
-    modalContent.setAttribute("id", "modalContent")
-    modalAcolhimento.appendChild(modalContent)
-    modalAcolhimento.showModal();
+// Botão de abrir o modal
+bntCancel.addEventListener("click", () => {
+    modal.innerHTML = ""
     nav.classList.add("blur")
     content.classList.add("blur")
+    // Mostra o modal
+    modal.showModal()
 
-    // Criando o HTML do modal de acolhimento
-    modalContent.innerHTML = `
-        <img src="src/assets/icons/logo (ENGPLAY).svg" alt="Logo" class="logo">
-        <img src="src/assets/icons/coracao.svg" alt="Coração" class="heart">
-        <h1 class="byeUser">Sentiremos sua falta, ${userName}!!</h1>
-        <p class="byeText">Respeitamos totalmente sua decisão de encerar sua assinatura. Porém caso haja algo que possamos fazer para melhorar sua experiência, queremos ouvi-lo antes de nos despedirmos.</p>
-        <button class="manterAss keepSub">Manter Assinatura</button>
-        <button class="continuarAcolhi" id="bntEtp1">Continuar</button>
-    `
-
-    keepSubscription()
-    const bntEtp1 = document.querySelector("#bntEtp1");
-    bntEtp1.addEventListener("click", () => {Feedback()})
+    // Mostra a parte de acolhimento
+    reception()
 })
 
-// Removendo os efeitos quando o modal for fechado.
-modalAcolhimento.addEventListener("close", ()=> {
+// O que ocorre quando o modal fecha
+modal.addEventListener("close", () => {
     nav.classList.remove("blur")
     content.classList.remove("blur")
 })
 
-
-// Criando o form
-function Feedback(){
-    modalAcolhimento.innerHTML = ""
-    const modalContent = document.createElement("div")
-    modalContent.classList.add("acolhimento")
-    modalContent.innerHTML = `
-            <img src="src/assets/icons/logo (ENGPLAY).svg" alt="Logo" class="logo">
-            <h1 class="titleFeedback">Podemos ouvir você rapidinho?</h1>
-            <p class="textFeedback">Entender seu motivo nos ajuda a evoluir. É rápido, basta escolher uma opção abaixo.</p>
-            <form class="feedbackForm" id="feedbackForm">
-                <div>
-                    <input type="radio" name="feedback" id="dificuldades">
-                    <label for="dificuldades">Dificuldades com o suporte ao cliente.</label>
-                </div>
-
-                <div>
-                    <input type="radio" name="feedback" id="noTime" value="noTime">
-                    <label for="noTime">Falta de tempo.</label>
-                </div>
-
-                <div>
-                    <input type="radio" name="feedback" id="financial" value="financial">
-                    <label for="financial">Questões financeira.</label>
-                </div>
-
-                <div>
-                    <input type="radio" name="feedback" id="needs" value="needs">
-                    <label for="needs">Conteúdo não atendeu às minhas necessidades.</label>
-                </div>
-                <div>
-
-                    <input type="radio" name="feedback" id="objective">
-                    <label for="objective">Já atingi o meu objetivo.</label>
-                </div>
-
-                <div>
-                    <label for="Other">Outro motivo:</label>
-                    <input type="text" id="Other" value="">
-                </div>
-            </form>
-
-            <button class="manterAss keepSub">Manter Assinatura</button>
-            <button class="continuarAcolhi" id="bntFeedBack">Continuar</button>
-        `
-
-        modalAcolhimento.appendChild(modalContent)
-        keepSubscription();
-        offers();
+// Funcao de manter Assinatura
+function keepSubscription(){
+    const keepSub = document.querySelectorAll(".keepSub");
+    keepSub.forEach(btn => {
+        btn.addEventListener("click", () => { 
+            modal.close(); 
+        });
+    })
 }
 
-// Ofertas na tela.
-function offers(){
-    // Pegando o botão que abre a página de ofertas
-    const bntFeedBack = document.querySelector("#bntFeedBack")
+// Botão de voltar
+function backArrow() {
+    const back = document.querySelectorAll(".backk")
+    back.forEach(bnt => {
+        bnt.addEventListener("click", () => {
+            feedBack()
+        })
+    })
+}
+
+// Função de mostrar o acolhimento
+function reception(){
+    const receptionDiv = document.createElement("div")
+    receptionDiv.classList.add("receptionDiv")
+    receptionDiv.innerHTML = `
+        <img src="src/assets/icons/logo (ENGPLAY).svg" alt="Logo" class="logo">
+        <img src="src/assets/icons/coracao.svg" alt="Coração" class="heart">
+        <h1 class="byeTitle">Sentiremos sua falta, <span class="capitalize">${userName}</span>!!</h1>
+        <p class="byeText">Respeitamos totalmente sua decisão de encerar sua assinatura. Porém caso haja algo que possamos fazer para melhorar sua experiência, queremos ouvi-lo antes de nos despedirmos.</p>
+        <div>
+            <button class="manterAss keepSub">Manter Assinatura</button>
+            <button class="continueBnt" id="bntFeedback">Continuar</button>
+        </div>
+    `
+    modal.append(receptionDiv)
+    keepSubscription()
+
+    const bntFeedback = document.querySelector("#bntFeedback")
+    bntFeedback.addEventListener("click", () => {
+        feedBack()
+    })
+}
+
+// Parte do feedback
+function feedBack(){
+    modal.innerHTML = ""
+    const feedBackDiv = document.createElement("div")
+    feedBackDiv.classList.add("feedBackDiv")
+
+    feedBackDiv.innerHTML = `
+        <img src="src/assets/icons/logo (ENGPLAY).svg" alt="Logo" class="logo">
+        <h1 class="titleFeedback">Podemos ouvir você rapidinho?</h1>
+        <p class="textFeedback">Entender seu motivo nos ajuda a evoluir. É rápido, basta escolher uma opção abaixo.</p>
+        <form class="feedbackForm" id="feedbackForm">
+            <div>
+                <input type="radio" name="feedback" id="dificuldades">
+                <label for="dificuldades">Dificuldades com o suporte ao cliente.</label>
+            </div>
+
+            <div>
+                <input type="radio" name="feedback" id="noTime" value="noTime">
+                <label for="noTime">Falta de tempo.</label>
+            </div>
+
+            <div>
+                <input type="radio" name="feedback" id="financial" value="financial">
+                <label for="financial">Questões financeira.</label>
+            </div>
+
+            <div>
+                <input type="radio" name="feedback" id="needs" value="needs">
+                <label for="needs">Conteúdo não atendeu às minhas necessidades.</label>
+            </div>
+            <div>
+
+                <input type="radio" name="feedback" id="objective">
+                <label for="objective">Já atingi o meu objetivo.</label>
+            </div>
+
+            <div>
+                <label for="Other">Outro motivo:</label>
+                <input type="text" id="Other" value="">
+            </div>
+        </form>
+        <div class="divBnt">
+            <button class="manterAss keepSub">Manter Assinatura</button>
+            <button class="continueBnt" id="bntFeedBack">Continuar</button>
+        </div>
+    `
+    modal.appendChild(feedBackDiv)
+    keepSubscription()
+
+    // Pegando o valor digitado ou marcado no form
+    const inputValueText = document.querySelector("#Other")
 
     // Pegando o input de texto caso o usuário escolha digitar
-    const inputValueText = document.querySelector("#Other")
     let textValue = ""
     inputValueText.addEventListener("input", () => {
         const inputValue = document.querySelector("input[name='feedback']:checked");
         textValue = inputValueText.value
-
+        
         // Desmarca caso o usuário tenha marcado um radio
         if (inputValue != null){
             inputValue.checked = false
@@ -128,23 +146,22 @@ function offers(){
             textValue = ""
         })
     })
-
-    // Abre a oferta de acordo com o click do usuário
-
+    
+    // Botão de continuação/offers
+    const bntFeedBack = document.querySelector("#bntFeedBack")
     bntFeedBack.addEventListener("click", () => {
         const inputValue = document.querySelector("input[name='feedback']:checked");
-
-        // Caso o usuário não coloque nenhum valor no form
         if (inputValue === null && textValue == ""){
             return alert("Preencha os dados.")
         }
 
-        // Cria o elemento de ofertas.
+        // Criando a parte de ofertas
         const offers = document.createElement("dialog")
-
-        // Criando o elemento de oferta
+        // Estilizacao
         offers.classList.add("offers")
 
+
+        // Parte caso o usuario digite
         if (textValue != ""){
             console.log(textValue)
             rememberBenefits()
@@ -168,15 +185,16 @@ function offers(){
             // Adiciona o modal de ofertas no body
             document.body.append(offers)
             // Aplica um efeito de blur no modal principal
-            modalAcolhimento.classList.add("blur")
+            modal.classList.add("blur")
 
             // Faz o modal de ofertas aparecer na tela.
             offers.showModal()
 
+
             // Caso ele recuse a oferta
             const recuseOfferBnt = document.querySelector("#recuseOfferBnt")
             recuseOfferBnt.addEventListener("click", () => {
-                modalAcolhimento.classList.remove("blur")
+                modal.classList.remove("blur")
                 offers.remove()
                 rememberBenefits()
             })
@@ -184,8 +202,8 @@ function offers(){
             // Caso ele aceite a oferta.
             const acceptOfferBnt = document.querySelector("#acceptOfferBnt")
             acceptOfferBnt.addEventListener("click", () => {
-                modalAcolhimento.classList.remove("blur")
-                modalAcolhimento.close()
+                modal.classList.remove("blur")
+                modal.close()
                 offers.remove()
 
                 // Parte de aceite de oferta
@@ -209,11 +227,11 @@ function offers(){
             // Adiciona o modal de ofertas no body
             document.body.append(offers)
             // Aplica um efeito de blur no modal principal
-            modalAcolhimento.classList.add("blur")
+            modal.classList.add("blur")
             
             // Remove o efeito de blur no modal principal
             offers.addEventListener("close", ()=> {
-                modalAcolhimento.classList.remove("blur")
+                modal.classList.remove("blur")
             })
             
             // Faz o modal de ofertas aparecer na tela.
@@ -222,7 +240,7 @@ function offers(){
             // Caso ele recuse a oferta
             const recuseOfferBnt = document.querySelector("#recuseOfferBnt")
             recuseOfferBnt.addEventListener("click", () => {
-                modalAcolhimento.classList.remove("blur")
+                modal.classList.remove("blur")
                 offers.remove()
                 rememberBenefits()
             })
@@ -230,15 +248,14 @@ function offers(){
             // Caso ele aceite a oferta
             const acceptOfferBnt = document.querySelector("#acceptOfferBnt")
             acceptOfferBnt.addEventListener("click", () => {
-                modalAcolhimento.classList.remove("blur")
-                modalAcolhimento.close()
+                modal.classList.remove("blur")
+                modal.close()
                 offers.remove()
                 
                 // Parte de aceite de oferta
             })
         }
 
-        // Caso o motivo seja "Nao atendeu as necessidades"
         else if (inputValue.value == "needs"){
             const divNeeds = document.createElement("div")
             divNeeds.classList.add("divTimeOut")
@@ -260,11 +277,11 @@ function offers(){
             // Adiciona o modal de ofertas no body
             document.body.append(offers)
             // Aplica um efeito de blur no modal principal
-            modalAcolhimento.classList.add("blur")
+            modal.classList.add("blur")
             
             // Remove o efeito de blur no modal principal
             offers.addEventListener("close", ()=> {
-                modalAcolhimento.classList.remove("blur")
+                modal.classList.remove("blur")
             })
             
             // Faz o modal de ofertas aparecer na tela.
@@ -273,7 +290,7 @@ function offers(){
             // Caso ele recuse a oferta
             const recuseOfferBnt = document.querySelector("#recuseOfferBnt")
             recuseOfferBnt.addEventListener("click", () => {
-                modalAcolhimento.classList.remove("blur")
+                modal.classList.remove("blur")
                 offers.remove()
                 rememberBenefits()
             })
@@ -281,8 +298,8 @@ function offers(){
             // Caso ele aceite a oferta
             const acceptOfferBnt = document.querySelector("#acceptOfferBnt")
             acceptOfferBnt.addEventListener("click", () => {
-                modalAcolhimento.classList.remove("blur")
-                modalAcolhimento.close()
+                modal.classList.remove("blur")
+                modal.close()
                 offers.remove()
                 
             })
@@ -296,71 +313,51 @@ function offers(){
 
 function rememberBenefits(){
     const rememberBenefitsDiv = document.createElement("div")
-    modalAcolhimento.innerHTML = ``
+    rememberBenefitsDiv.classList.add("rememberBenefitsDiv")
+    modal.innerHTML = ``
     rememberBenefitsDiv.innerHTML = `
-        <div class="rememberBenefits">
-            <img src="src/assets/icons/logo (ENGPLAY).svg" alt="Logo">
-            <h1>Você está prestes a perder todos os seus benefícios</h1>
-            <p>Cancelando sua inscrição hoje, vocês deixará de ter acesso aos cursos de:</p>
-            <div>
-                <img src="src/assets/imgs/etp-2-leitura-e-interpretacao.png" alt="Curso de leitura e interpretação de projetos estruturais">
-                <img src="src/assets/imgs/etp-2-instalacoes-hidrossanitarias.png" alt="Curso de instalações Hidrossanitárias">
-                <img src="src/assets/imgs/etp-2-projeto-hidrossanitario.png" alt="Curso de projeto Hidrossanitário.">
-                <img src="src/assets/imgs/etp-2-combate-a-incendio.png" alt="Curso de projeto de combate a incêndio">
-            </div>
-            <ul>
-                <li><span class="blue">+ </span>Comunidade exclusiva de networking</li>
-                <li><span class="blue">+ </span>Mais de 40 cursos completos</li>
-                <li><span class="blue">+ </span>Banco de vagas de emprego</li>
-                <li><span class="blue">+ </span>Seu progresso salvo e disponível a qualquer momento</li>
-                <li><span class="blue">+ </span>Planilhas e templates</li>
-                <li><span class="blue">+ </span>Suporte e mentorias com especialistas</li>
-            </ul>
-            <div>
-                <button class="manterAss keepSub">Manter Assinatura</button>
-                <button class="continuarAcolhi" id="detailsContinue">Continuar</button>
-            </div>
-            <button id="back" class="backk">
-                <img src="src/assets/icons/ic_outline-arrow-back.svg" alt="Botão de voltar">
-            </button>
+        <img src="src/assets/icons/logo (ENGPLAY).svg" alt="Logo">
+        <h1>Você está prestes a perder todos os seus benefícios</h1>
+        <p>Cancelando sua inscrição hoje, vocês deixará de ter acesso aos cursos de:</p>
+        <div>
+            <img src="src/assets/imgs/etp-2-leitura-e-interpretacao.png" alt="Curso de leitura e interpretação de projetos estruturais">
+            <img src="src/assets/imgs/etp-2-instalacoes-hidrossanitarias.png" alt="Curso de instalações Hidrossanitárias">
+            <img src="src/assets/imgs/etp-2-projeto-hidrossanitario.png" alt="Curso de projeto Hidrossanitário.">
+            <img src="src/assets/imgs/etp-2-combate-a-incendio.png" alt="Curso de projeto de combate a incêndio">
         </div>
+        <ul>
+            <li><span class="blue">+ </span>Comunidade exclusiva de networking</li>
+            <li><span class="blue">+ </span>Mais de 40 cursos completos</li>
+            <li><span class="blue">+ </span>Banco de vagas de emprego</li>
+            <li><span class="blue">+ </span>Seu progresso salvo e disponível a qualquer momento</li>
+            <li><span class="blue">+ </span>Planilhas e templates</li>
+            <li><span class="blue">+ </span>Suporte e mentorias com especialistas</li>
+        </ul>
+        <div class="divBnt">
+            <button class="manterAss keepSub">Manter Assinatura</button>
+            <button class="continueBnt" id="detailsContinue">Continuar</button>
+        </div>
+        <button id="back" class="backk">
+            <img src="src/assets/icons/ic_outline-arrow-back.svg" alt="Botão de voltar">
+        </button>
     `
-    modalAcolhimento.appendChild(rememberBenefitsDiv)
+    modal.append(rememberBenefitsDiv)
     keepSubscription()
     backArrow()
+
     const detailsContinue = document.querySelector("#detailsContinue")
     detailsContinue.addEventListener("click", () => {
-        detailsModal()
+        details()
     })
-
-    
 }
 
-function detailsModal(){
-    modalAcolhimento.innerHTML = ""
+function details(){
+    modal.innerHTML = ""
     const detailsDiv = document.createElement("div")
-    
-    detailsDiv.innerHTML = `Olá`
+    detailsDiv.classList.add("detailsDiv")
+    detailsDiv.innerHTML = `
+        hello world!
+    `
 
-    modalAcolhimento.appendChild(detailsDiv)
-}
-
-// Botão de manter Assinatura
-function keepSubscription(){
-    const keepSub = document.querySelectorAll(".keepSub");
-    keepSub.forEach(btn => {
-        btn.addEventListener("click", () => { 
-            modalAcolhimento.close(); 
-        });
-    })
-}
-
-// Botão de voltar
-function backArrow() {
-    const back = document.querySelectorAll(".backk")
-    back.forEach(bnt  => {
-        bnt.addEventListener("click", () => {
-            Feedback()
-        })
-    })
+    modal.append(detailsDiv)
 }

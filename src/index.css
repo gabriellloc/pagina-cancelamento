@@ -1,5 +1,7 @@
 @import url(styles/global.css);
-@import url(styles/nav.css);
 @import url(styles/main.css);
-@import url(styles/modais.css);
+@import url(styles/nav.css);
+@import url(styles/reception.css);
+@import url(styles/feedback.css);
 @import url(styles/offers.css);
+@import url(styles/benefits.css);

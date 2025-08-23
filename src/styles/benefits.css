@@ -1,0 +1,91 @@
+.rememberBenefitsDiv {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+}
+
+.rememberBenefitsDiv img[alt="Logo"]{
+    width: 10%;
+    margin: 1rem auto;
+}
+
+.rememberBenefitsDiv h1 {
+    font: var(--title-sl);
+    color: var(--cl-lightblue);
+    text-align: center;
+    margin: .5rem;
+}
+
+.rememberBenefitsDiv p {
+    font: var(--tx-sm);
+    color: var(--cl-black);
+    text-align: center;
+    margin: .2rem;
+}
+
+.rememberBenefitsDiv div:nth-child(4){
+    display: flex;
+    justify-content: space-around;
+    gap: .2rem;
+    margin: .5rem;
+    width: fit-content;
+    margin: auto;
+}
+
+@media (width < 60em) {
+    .rememberBenefitsDiv div:nth-child(4) img:nth-child(3){
+        display: none;
+    }
+}
+
+@media (width < 40em) {
+    .rememberBenefitsDiv div:nth-child(4) img:nth-child(4){
+        display: none;
+    }
+
+    .rememberBenefitsDiv div:nth-child(4) img[src*="etp-2"]{
+        width: 50%;
+    }
+}
+
+.rememberBenefitsDiv img[src*="etp-2"] {
+    margin: auto;
+    width: 100%;
+}
+
+.rememberBenefitsDiv ul {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+
+.rememberBenefitsDiv li {
+    color: var(--cl-black);
+    font: var(--tx-sm);
+}
+
+#back {
+    position: absolute;
+    cursor: pointer;
+}
+
+.rememberBenefitsDiv .divBnt {
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem;
+}
+
+@media (width < 60em) {
+    .rememberBenefitsDiv .divBnt{
+        display: grid;
+        gap: 1rem;
+    }
+
+    .rememberBenefitsDiv .divBnt .continueBnt{
+        width: fit-content;
+        margin: auto;
+    }
+}
