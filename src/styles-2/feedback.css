@@ -1,0 +1,114 @@
+.feedBackDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+.feedBackDiv img {
+    width: 10%;
+    margin: auto;
+}
+
+.feedBackDiv .titleFeedback {
+    text-align: center;
+    font: var(--title-sl);
+    color: var(--cl-lightblue);
+    text-transform: uppercase;
+}
+
+.feedBackDiv .textFeedback{
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    font: var(--tx-sm);
+    color: var(--cl-black);
+}
+
+.feedBackDiv form {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    border: 1px solid var(--cl-border-form);
+    padding: 2rem;
+    border-radius: .5rem;
+}
+
+@media (width < 50em) {
+    .feedBackDiv form {
+        padding-block: 1rem;
+        padding-inline: 0;
+        border: none;
+    }
+    .feedBackDiv .textFeedback{
+        width: 100%;
+    }
+}
+
+.feedBackDiv form div {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.feedBackDiv div input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    min-width: 1.4rem;
+    min-height: 1.4rem;
+    border: 1px solid var(--cl-purple);
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+
+    display: grid;
+    place-content: center;
+    transition: outline 500ms ease;
+}
+
+.feedBackDiv div input[type="radio"]:hover {
+    outline: .385rem solid #7203E133;
+}
+
+.feedBackDiv div input[type="radio"]::before {
+    content: "";
+    position: absolute;
+    width: .7rem;
+    height: .7rem;
+    border-radius: 50%;
+    transform: scale(0) translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 0 0 10rem var(--cl-purple);
+}
+
+.feedBackDiv div input[type="radio"]:checked::before {
+    transform: scale(1) translate(-50%,-50%);
+}
+
+.feedBackDiv div label {
+    font: var(--tx-sm);
+}
+
+.feedBackDiv div input[type="text"]{
+    padding: .5rem 1rem;
+    border: none;
+    outline: 1px solid var(--cl-border-form);
+    border-radius: .5rem;
+    font: var(--bnt-cancel-sm);
+    color: rgba(0, 0, 0, .7);
+    transition: all 500ms ease;
+}
+
+.feedBackDiv div input[type="text"]:focus {
+    outline: 3px solid var(--cl-border-form);
+}
+
+.feedBackDiv .divBnt {
+    display: flex;
+    justify-content: space-around;    
+}

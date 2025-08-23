@@ -1,0 +1,52 @@
+.receptionDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    padding: 1.5rem;
+}
+
+.receptionDiv img[src*="icons/logo"] {
+    width: 3rem;
+    margin: auto;
+}
+
+@media (width < 80em) {
+    .receptionDiv img[src*="icons/logo"] {
+        display: none;
+    }
+}
+
+.receptionDiv img[src*="icons/coracao.svg"] {
+    width: 9rem;
+    margin: 1rem auto;
+}
+
+.receptionDiv .byeTitle {
+    font: var(--title-sl);
+    text-align: center;
+    color: var(--cl-lightblue);
+    text-transform: uppercase;
+}
+
+.receptionDiv .byeText {
+    text-align: center;
+    margin: auto;
+    color: var(--cl-black);
+    font: var(--tx-sm);
+    width: 70%;
+}
+
+.receptionDiv div {
+    display: flex;
+    justify-content: space-between;    
+    margin: auto;
+    width: 60%;
+}
+
+@media (width < 80em) {
+    .receptionDiv div {
+        flex-direction: column;
+        gap: 1rem;
+        width: fit-content;
+    }
+}
