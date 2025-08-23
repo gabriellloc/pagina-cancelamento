@@ -27,6 +27,7 @@ bntCancel.addEventListener("click", () => {
 
 // O que ocorre quando o modal fecha
 modal.addEventListener("close", () => {
+    modal.innerHTML = ""
     nav.classList.remove("blur")
     content.classList.remove("blur")
 })
@@ -36,7 +37,7 @@ function keepSubscription(){
     const keepSub = document.querySelectorAll(".keepSub");
     keepSub.forEach(btn => {
         btn.addEventListener("click", () => { 
-            modal.close(); 
+            modal.close();
         });
     })
 }
@@ -163,7 +164,6 @@ function feedBack(){
 
         // Parte caso o usuario digite
         if (textValue != ""){
-            console.log(textValue)
             rememberBenefits()
         }
 

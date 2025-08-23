@@ -133,7 +133,7 @@
 }
 
 .stats button {
-    --cl-bnt-cancel: #3C3C3C;
+    --cl-bnt-cancel: #3c3c3c8f;
     --bg-bnt-cancel: #F9F6FC;
     border: 2px solid var(--cl-bnt-cancel);
     padding: .8rem 1rem;
