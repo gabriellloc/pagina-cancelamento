@@ -1,4 +1,5 @@
 "use strict";
+import "./css/index.css"
 
 let userName = "Isabela santos"
 
@@ -57,8 +58,8 @@ function reception(){
     const receptionDiv = document.createElement("div")
     receptionDiv.classList.add("receptionDiv")
     receptionDiv.innerHTML = `
-        <img src="src/assets/icons/logo (ENGPLAY).svg" alt="Logo" class="logo">
-        <img src="src/assets/icons/coracao.svg" alt="Coração" class="heart">
+        <img src="assets/icons/logo (ENGPLAY).svg" alt="Logo" class="logo">
+        <img src="assets/icons/coracao.svg" alt="Coração" class="heart">
         <h1 class="byeTitle">Sentiremos sua falta, <span class="capitalize">${userName}</span>!!</h1>
         <p class="byeText">Respeitamos totalmente sua decisão de encerar sua assinatura. Porém caso haja algo que possamos fazer para melhorar sua experiência, queremos ouvi-lo antes de nos despedirmos.</p>
         <div>
@@ -82,7 +83,7 @@ function feedBack(){
     feedBackDiv.classList.add("feedBackDiv")
 
     feedBackDiv.innerHTML = `
-        <img src="src/assets/icons/logo (ENGPLAY).svg" alt="Logo" class="logo">
+        <img src="assets/icons/logo (ENGPLAY).svg" alt="Logo" class="logo">
         <h1 class="titleFeedback">Podemos ouvir você rapidinho?</h1>
         <p class="textFeedback">Entender seu motivo nos ajuda a evoluir. É rápido, basta escolher uma opção abaixo.</p>
         <form class="feedbackForm" id="feedbackForm">
@@ -262,10 +263,10 @@ function feedBack(){
             divNeeds.innerHTML = `
                 <h3>Trilha recomendada baseada no seu histórico + 10% ou mais de desconto</h3>
                 <p class="imgsNeeds">
-                    <img src="src/assets/imgs/ENGPLAY_CAPACURSO_REVIT_1-1 1.png" alt="">
-                    <img src="src/assets/imgs/ENGPLAY_CAPACURSO_COMBATEINCENDIO 1.png" alt="">
-                    <img src="src/assets/imgs/ENGPLAY_CAPACURSO_COMBATEINCENDIO_DO_PROJETO_A_APROVACAO 2.png" alt="">
-                    <img src="src/assets/imgs/ENGPLAY_CAPA-CRIANDO-PORTIFOLIOS.png" alt="">
+                    <img src="assets/imgs/ENGPLAY_CAPACURSO_REVIT_1-1 1.png" alt="">
+                    <img src="assets/imgs/ENGPLAY_CAPACURSO_COMBATEINCENDIO 1.png" alt="">
+                    <img src="assets/imgs/ENGPLAY_CAPACURSO_COMBATEINCENDIO_DO_PROJETO_A_APROVACAO 2.png" alt="">
+                    <img src="assets/imgs/ENGPLAY_CAPA-CRIANDO-PORTIFOLIOS.png" alt="">
                 </p>
                 <div class="flex">
                     <button class="acceptOffer" id="acceptOfferBnt">Aceitar</button>
@@ -316,14 +317,14 @@ function rememberBenefits(){
     rememberBenefitsDiv.classList.add("rememberBenefitsDiv")
     modal.innerHTML = ``
     rememberBenefitsDiv.innerHTML = `
-        <img src="src/assets/icons/logo (ENGPLAY).svg" alt="Logo">
+        <img src="assets/icons/logo (ENGPLAY).svg" alt="Logo">
         <h1>Você está prestes a perder todos os seus benefícios</h1>
         <p>Cancelando sua inscrição hoje, vocês deixará de ter acesso aos cursos de:</p>
         <div>
-            <img src="src/assets/imgs/etp-2-leitura-e-interpretacao.png" alt="Curso de leitura e interpretação de projetos estruturais">
-            <img src="src/assets/imgs/etp-2-instalacoes-hidrossanitarias.png" alt="Curso de instalações Hidrossanitárias">
-            <img src="src/assets/imgs/etp-2-projeto-hidrossanitario.png" alt="Curso de projeto Hidrossanitário.">
-            <img src="src/assets/imgs/etp-2-combate-a-incendio.png" alt="Curso de projeto de combate a incêndio">
+            <img src="assets/imgs/etp-2-leitura-e-interpretacao.png" alt="Curso de leitura e interpretação de projetos estruturais">
+            <img src="assets/imgs/etp-2-instalacoes-hidrossanitarias.png" alt="Curso de instalações Hidrossanitárias">
+            <img src="assets/imgs/etp-2-projeto-hidrossanitario.png" alt="Curso de projeto Hidrossanitário.">
+            <img src="assets/imgs/etp-2-combate-a-incendio.png" alt="Curso de projeto de combate a incêndio">
         </div>
         <ul>
             <li><span class="blue">+ </span>Comunidade exclusiva de networking</li>
@@ -338,7 +339,7 @@ function rememberBenefits(){
             <button class="continueBnt" id="detailsContinue">Continuar</button>
         </div>
         <button id="back" class="backk">
-            <img src="src/assets/icons/ic_outline-arrow-back.svg" alt="Botão de voltar">
+            <img src="assets/icons/ic_outline-arrow-back.svg" alt="Botão de voltar">
         </button>
     `
     modal.append(rememberBenefitsDiv)
