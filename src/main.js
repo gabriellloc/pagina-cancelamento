@@ -379,10 +379,19 @@ function details(){
         </ul>
         <div class="divBnt">
             <button class="manterAss keepSub">Manter Assinatura</button>
-            <button class="continueBnt" id="detailsContinue">Continuar</button>
+            <button class="continueBnt" id="confirmCancellationBnt">Continuar</button>
         </div>
     `
     modal.append(detailsDiv)
     
     keepSubscription()
+
+    const confirmCancellationBnt = document.querySelector("#confirmCancellationBnt")
+    confirmCancellationBnt.addEventListener("click", () => {
+        confirmCancellation()
+    })
+}
+
+function confirmCancellation(){
+    modal.innerHTML = ""
 }
