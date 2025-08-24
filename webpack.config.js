@@ -9,6 +9,16 @@ module.exports = {
     path: path.resolve(__dirname, "docs"),
     clean: true
   },
+
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "docs")
+    },
+    port: 3000,
+    open: true,
+    liveReload: true,
+  },
+
   target: "web",
   mode: "development",
 
