@@ -12,9 +12,22 @@ module.exports = {
   plugins: [new HTMLWebpackPlugin()],
 
   module: {
-    rules: [{
-      test: /\.css$/i,
-      use: ["style-loader", "css-loader"]
-    }]
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+        exclude: "/node_modules",
+      },
+      {
+        test: /\.js$/i,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: [["@babel/preset-env", { targets : "defaults"}]],
+          },
+        },
+        exclude: "/node_modules",
+      }
+    ],
   }
 }
