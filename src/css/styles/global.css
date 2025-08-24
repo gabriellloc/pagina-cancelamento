@@ -33,8 +33,8 @@ body {
     --tx-ss: 600 .875rem/1 var(--ff); /*  */
 
     --bnt-cancel-sm: 500 .875rem/1 var(--ff); /* 8px */
-    --bnt-cancel-m: 500 1rem/1 var(--ff);
     --bnt-cancel-md: 500 1.2rem/1 var(--ff); /* 19,2 */
+    --bnt-cancel-m: 500 1rem/1 var(--ff);
 
     /* Colors */
     --cl-white: #fff;

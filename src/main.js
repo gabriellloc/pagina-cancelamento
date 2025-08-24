@@ -358,8 +358,31 @@ function details(){
     const detailsDiv = document.createElement("div")
     detailsDiv.classList.add("detailsDiv")
     detailsDiv.innerHTML = `
-        hello world!
+        <img src="assets/icons/logo (ENGPLAY).svg" alt="Logo">
+        <h1>Detalhes do seu cancelamento</h1>
+        <ul>
+            <li class="details">Detalhes
+                <ul>
+                    <li class="detailsContent">Cancelamento de seu plano mensal Engplay.</li>
+                </ul>
+            </li>
+            <li class="details">Perca do acesso
+                <ul>
+                    <li class="detailsContent">Não poderá mais acessar o curso da sua área ou outros cursos da plataforma, bem como o Banco de Vagas e a Comunidade Engplay.</li>
+                </ul>
+            </li>
+            <li class="details">Cobranças
+                <ul>
+                    <li class="detailsContent">Não será mais cobrado, no próximo mês, o valor do investimento em sua fatura.</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="divBnt">
+            <button class="manterAss keepSub">Manter Assinatura</button>
+            <button class="continueBnt" id="detailsContinue">Continuar</button>
+        </div>
     `
-
     modal.append(detailsDiv)
+    
+    keepSubscription()
 }
