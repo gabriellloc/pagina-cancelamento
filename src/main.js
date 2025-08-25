@@ -8,18 +8,24 @@ let userName = "Isabela santos"
 // Botão de cancelar a assinatura
 const bntCancel = document.querySelector("#cancel")
 
-// Modal
-const modal = document.querySelector("#modal-acolhimento")
+// Modal de todo o conteúdo
+const modal = document.createElement("dialog")
+modal.setAttribute("id", "modal-acolhimento")
 
 // Pegando o content/body para aplicar o efeito
 const nav = document.querySelector("#nav");
 const content = document.querySelector("#content");
+
+// Criando o modal de confirmação de cancelamento
+const confirmCancellationModal = document.createElement("dialog")
 
 // Botão de abrir o modal
 bntCancel.addEventListener("click", () => {
     modal.innerHTML = ""
     nav.classList.add("blur")
     content.classList.add("blur")
+
+    document.body.append(modal)
     // Mostra o modal
     modal.showModal()
 
@@ -29,6 +35,7 @@ bntCancel.addEventListener("click", () => {
 
 // O que ocorre quando o modal fecha
 modal.addEventListener("close", () => {
+    modal.remove()
     modal.innerHTML = ""
     nav.classList.remove("blur")
     content.classList.remove("blur")
@@ -40,6 +47,7 @@ function keepSubscription(){
     keepSub.forEach(btn => {
         btn.addEventListener("click", () => { 
             modal.close();
+            confirmCancellationModal.close()
         });
     })
 }
@@ -313,6 +321,7 @@ function feedBack(){
     })
 }
 
+// Parte de relembrar os benefícios
 function rememberBenefits(){
     const rememberBenefitsDiv = document.createElement("div")
     rememberBenefitsDiv.classList.add("rememberBenefitsDiv")
@@ -347,16 +356,22 @@ function rememberBenefits(){
     keepSubscription()
     backArrow()
 
+    // Caso o usuário continue o cancelamento
     const detailsContinue = document.querySelector("#detailsContinue")
     detailsContinue.addEventListener("click", () => {
         details()
     })
 }
 
+// Parte dos detalhes do cancelamento
 function details(){
+    // Remove todo o conteúdo do modal
     modal.innerHTML = ""
+
+    // Cria uma div com a class "detailsDiv"
     const detailsDiv = document.createElement("div")
     detailsDiv.classList.add("detailsDiv")
+    // Colocando o conteúdo
     detailsDiv.innerHTML = `
         <img src="assets/icons/logo (ENGPLAY).svg" alt="Logo">
         <h1>Detalhes do seu cancelamento</h1>
@@ -379,19 +394,76 @@ function details(){
         </ul>
         <div class="divBnt">
             <button class="manterAss keepSub">Manter Assinatura</button>
-            <button class="continueBnt" id="confirmCancellationBnt">Continuar</button>
+            <button class="continueBnt" id="CancellationBnt">Continuar</button>
         </div>
     `
+
+    // Adicionando o conteúdo no modal
     modal.append(detailsDiv)
     
+    // Funcao para ativar o botao de manter a assinatura
     keepSubscription()
 
-    const confirmCancellationBnt = document.querySelector("#confirmCancellationBnt")
-    confirmCancellationBnt.addEventListener("click", () => {
+    // Caso o usuário continue o cancelamentoc
+    const CancellationBnt = document.querySelector("#CancellationBnt")
+    CancellationBnt.addEventListener("click", () => {
         confirmCancellation()
     })
 }
 
+// Parte de confirmar o cancelamento
 function confirmCancellation(){
-    modal.innerHTML = ""
+    // Adiciona uma class para o modal de cancelamento
+    confirmCancellationModal.classList.add("confirmCancellationModal")
+    // Cria o conteúdo do modal de cancelamento
+    confirmCancellationModal.innerHTML = `
+        <div class="confirmCancellationDiv">
+            <img src="assets/icons/Info.svg">
+            <div class="cancellationContent">
+                <h2>Cancelamento de Assinatura</h2>
+                <p><span class="atention">Atenção:</span> Ao cancelar sua assinatura, você perderá todos os benefícios exclusivos, incluindo acesso ao conteúdo premium, atualizações e vantagens especiais no final do período já pago. Esta ação é irreversível, pense com cuidado antes de prosseguir.</p>
+                <button class="confirmCancellationBnt" id="confirmCancellationBnt">Cancelar assinatura</button>
+            </div>
+            <img src="assets/icons/X.svg" alt="Botao de fechar" class="Xbnt keepSub">
+        </div>
+    `
+    // Aplicando um efeito de blur no modal
+    modal.classList.add("blur")
+
+    // Adicionando o modal de cancelamento no body
+    document.body.append(confirmCancellationModal)
+    
+    // Executando a funcao do botao de cancelar
+    keepSubscription()
+
+    // Mostrando o modal de cancelamento na tela
+    confirmCancellationModal.showModal()
+
+    // Caso o usuário feche o modal de cancelamento
+    confirmCancellationModal.addEventListener("close", () => {
+        // Remove o blur
+        modal.classList.remove("blur")
+        // Remove o modal de cancelamento da tela
+        confirmCancellationModal.remove()
+        modal.close()
+    })
+
+    const confirmCancellationBnt = document.querySelector("#confirmCancellationBnt")
+    confirmCancellationBnt.addEventListener("click", () => {
+        confirmCancellationModal.classList.replace("confirmCancellationModal", "confirmCancellationModalAprove")
+        confirmCancellationModal.innerHTML = `
+            <div class="confirmCancellationDivAprove">
+                <img src="assets/icons/Info.svg">
+                <div class="cancellationContentAprove">
+                    <h2>Cancelamento aprovado</h2>
+                    <p><span class="atentionAprove">Atenção:</span> Se decidir voltar nos próximos 6 meses, seu progresso continua aqui. Reativar leva menos de 1 minuto. Obrigado por estudar conosco. Aqui vai um cupom de 40% válido por 15 dias, caso queira voltar.</p>
+                    <div class="bntsAprove>
+                        <button class="confirmCancellationBntAprove" id="confirmCancellationBntAprove">Continuar</button>
+                        <button class="cupom">Resgatar cupom</button>
+                    </div>
+                </div>
+                <img src="assets/icons/X.svg" alt="Botao de fechar" class="Xbnt">
+            </div>
+        `
+    })
 }

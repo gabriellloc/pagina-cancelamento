@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100..900&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -20,7 +20,7 @@ body {
 }
 
 :root {
-    --ff: "Noto Sans", sans-serif;
+    --ff: "Noto Sans HK", sans-serif;
 
     --title-large: 700 2.5rem/1 var(--ff); /* 40px */
     --title-sl: 700 1.875rem/1 var(--ff); /* 30px*/
@@ -35,6 +35,8 @@ body {
     --bnt-cancel-sm: 500 .875rem/1 var(--ff); /* 8px */
     --bnt-cancel-md: 500 1.2rem/1 var(--ff); /* 19,2 */
     --bnt-cancel-m: 500 1rem/1 var(--ff);
+    --bnt-cancel-m-atention: 600 1rem/1 var(--ff);
+    --bnt-cancel-sm-atention-hover: 700 1rem/1 var(--ff);
 
     /* Colors */
     --cl-white: #fff;
@@ -53,6 +55,13 @@ body {
 
     /* Nav colors */
     --cl-menu: #fff;
+
+    /* Attention cancel */
+    --bg-cl-danger: #FEE9E7;
+    --cl-border-danger: #ec221f77;
+    --cl-bnt-danger: #EC221F;
+    --cl-bnt-danger-hover: #ec221f9c;
+    --cl-h-p-danger: #900B09;
 }
 
 a {
@@ -80,6 +89,10 @@ ul {
 
 .blur {
     filter: blur(3.5px);
+}
+
+.atention {
+    font: var(--bnt-cancel-m-atention);
 }
 
 .manterAss {
