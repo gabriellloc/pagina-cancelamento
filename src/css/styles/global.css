@@ -104,6 +104,10 @@ ul {
     font: var(--bnt-cancel-m-atention);
 }
 
+.dspNone {
+    display: none;
+}
+
 .manterAss {
     background-image: var(--linear-bg-cl);
     padding: .875rem;

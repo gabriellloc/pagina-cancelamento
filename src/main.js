@@ -492,5 +492,16 @@ function thanksModal() {
 }
 
 function ModifyingContent(){
+    const stats = document.querySelector(".stats")
+    modal.close()
     
+    const activation = document.querySelector("#activation")
+    activation.textContent = "Inativa"
+    activation.classList = "activation inativa"
+
+    bntCancel.remove()
+    const toSign = document.createElement("button")
+    toSign.textContent = "Assinar"
+    toSign.classList.add("toSign")
+    stats.append(toSign)
 }

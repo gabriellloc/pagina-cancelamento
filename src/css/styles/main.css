@@ -141,7 +141,7 @@
     color: var(--cl-bnt-cancel);
     background-color: var(--bg-bnt-cancel);
     font: var(--bnt-cancel-sm);
-    transition: background 300ms ease;
+    transition: all 300ms ease;
 }
 
 .stats button:hover {
@@ -160,4 +160,17 @@
         width: fit-content;
         text-align: center;
     }
+}
+
+.stats .inativa {
+    background-color: var(--cl-bnt-danger-hover);
+    color: var(--cl-white);
+    box-shadow: 0 0 .05rem var(--cl-bnt-danger-hover);
+}
+
+.stats .toSign:hover{
+    transform: scale(1.04);
+    --cl-bnt-cancel: #3c3c3c8f;
+    --bg-bnt-cancel: #F9F6FC;
+    box-shadow: 0 0 .4rem var(--cl-bnt-cancel);
 }
