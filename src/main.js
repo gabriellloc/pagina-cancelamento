@@ -466,23 +466,31 @@ function confirmCancellation(){
         `
         const confirmCancellationBntAprove = document.querySelector("#confirmCancellationBntAprove")
         confirmCancellationBntAprove.addEventListener("click", () => {
-            thankYouModal()
+            thanksModal()
         })
     })
 }
 
-function thankYouModal() {
+function thanksModal() {
     confirmCancellationModal.remove()
     modal.innerHTML = ""
     modal.classList.remove("blur")
 
-    const thankYou = document.createElement("div")
-    thankYou.classList.add("thankYou")
-    thankYou.innerHTML = `
+    const thanks = document.createElement("div")
+    thanks.classList.add("thanks")
+    thanks.innerHTML = `
         <img src="assets/icons/logo (ENGPLAY).svg" alt="Logo da Engplay">
         <h2>Foi um privilégio ter você com a gente</h2>
         <p>Guardaremos o que você construiu aqui com carinho. Volte quando sentir que é o momento certo.</p>
-        <button>Fechar</button>
+        <button id="thanksUser">Fechar</button>
     `
-    modal.append(thankYou)
+    modal.append(thanks)
+    const thanksUser = document.querySelector("#thanksUser")
+    thanksUser.addEventListener("click", ()=> {
+        ModifyingContent()
+    })
+}
+
+function ModifyingContent(){
+    
 }
