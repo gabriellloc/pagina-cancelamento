@@ -453,17 +453,36 @@ function confirmCancellation(){
         confirmCancellationModal.classList.replace("confirmCancellationModal", "confirmCancellationModalAprove")
         confirmCancellationModal.innerHTML = `
             <div class="confirmCancellationDivAprove">
-                <img src="assets/icons/Info.svg">
+                <img src="assets/icons/Info-aprove.svg">
                 <div class="cancellationContentAprove">
                     <h2>Cancelamento aprovado</h2>
                     <p><span class="atentionAprove">Atenção:</span> Se decidir voltar nos próximos 6 meses, seu progresso continua aqui. Reativar leva menos de 1 minuto. Obrigado por estudar conosco. Aqui vai um cupom de 40% válido por 15 dias, caso queira voltar.</p>
-                    <div class="bntsAprove>
+                    <div class="bntsAprove">
                         <button class="confirmCancellationBntAprove" id="confirmCancellationBntAprove">Continuar</button>
                         <button class="cupom">Resgatar cupom</button>
                     </div>
                 </div>
-                <img src="assets/icons/X.svg" alt="Botao de fechar" class="Xbnt">
             </div>
         `
+        const confirmCancellationBntAprove = document.querySelector("#confirmCancellationBntAprove")
+        confirmCancellationBntAprove.addEventListener("click", () => {
+            thankYouModal()
+        })
     })
+}
+
+function thankYouModal() {
+    confirmCancellationModal.remove()
+    modal.innerHTML = ""
+    modal.classList.remove("blur")
+
+    const thankYou = document.createElement("div")
+    thankYou.classList.add("thankYou")
+    thankYou.innerHTML = `
+        <img src="assets/icons/logo (ENGPLAY).svg" alt="Logo da Engplay">
+        <h2>Foi um privilégio ter você com a gente</h2>
+        <p>Guardaremos o que você construiu aqui com carinho. Volte quando sentir que é o momento certo.</p>
+        <button>Fechar</button>
+    `
+    modal.append(thankYou)
 }

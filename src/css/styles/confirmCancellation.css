@@ -68,3 +68,83 @@
     transform: scale(1.04);
     box-shadow: 0 0 .5rem var(--cl-bnt-danger);
 }
+
+.confirmCancellationModalAprove{
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    width: 55rem;
+    padding: 1.5rem;
+    background-color: var(--bg-cl-aprove);
+    border: 1px solid var(--border-aprove);
+    border-radius: .5rem;
+}
+
+.confirmCancellationDivAprove{
+    display: flex;
+    align-items: start;
+    gap: .5rem;
+}
+
+.cancellationContentAprove {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.confirmCancellationDivAprove img{
+    width: 1.7rem;
+}
+
+.cancellationContentAprove h2 {
+    font: var(--title-sssl);
+    color: var(--border-aprove);
+}
+
+.cancellationContentAprove p {
+    font: var(--bnt-cancel-m);
+    color: var(--border-aprove);
+    text-align: justify;
+    max-width: 95%;
+}
+
+.bntsAprove {
+    display: flex;
+    gap: 2rem;
+    margin-top: .5rem;
+}
+
+.bntsAprove .confirmCancellationBntAprove{
+    font: var(--bnt-cancel-sm);
+    padding: .875rem;
+    background-color: var(--cl-bnt-aprove);
+    color: var(--cl-white);
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: all 500ms ease;
+}
+
+.bntsAprove .confirmCancellationBntAprove:hover{
+    background-color: var(--cl-bnt-aprove-hover);
+    transform: scale(1.04);
+    box-shadow: 0 0 .5rem var(--cl-bnt-aprove-hover);
+}
+
+.bntsAprove .cupom{
+    padding: .875rem;
+    font: var(--bnt-cancel-sm);
+    color: var(--cl-black);
+    cursor: pointer;
+    background-color: #9999999f;
+    border-radius: .5rem;
+    transition: all 500ms ease;
+}
+
+.bntsAprove .cupom:hover{
+    --color-gray: #99999950;
+    font: var(--bnt-cancel-sm);
+    color: var(--cl-black);
+    background-color: var(--color-gray);
+    transform: scale(1.04);
+    box-shadow: 0 0 .5rem var(--color-gray);
+}
