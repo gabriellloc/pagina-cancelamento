@@ -51,6 +51,15 @@
     transform: translateX(-50%) scale(1.3);
 }
 
+.confirmCancellationDiv .confirmCancellationBnt:disabled {
+    background-color: var(--cl-bnt-danger-hover);
+}
+
+.confirmCancellationDiv .confirmCancellationBnt:disabled:hover{
+    transform: none;
+    box-shadow: 0 0 .2rem var(--cl-bnt-danger);
+}
+
 .confirmCancellationDiv .confirmCancellationBnt{
     background-color: var(--cl-bnt-danger);
     color: var(--bg-cl-danger);
@@ -65,8 +74,8 @@
 
 .confirmCancellationDiv .confirmCancellationBnt:hover{
     background-color: var(--cl-bnt-danger-hover);
-    transform: scale(1.04);
-    box-shadow: 0 0 .5rem var(--cl-bnt-danger);
+    transform: scale(1.02);
+    box-shadow: 0 0 .4rem var(--cl-bnt-danger);
 }
 
 .confirmCancellationModalAprove{

@@ -449,6 +449,21 @@ function confirmCancellation(){
     })
 
     const confirmCancellationBnt = document.querySelector("#confirmCancellationBnt")
+
+    let time = 5
+    confirmCancellationBnt.disabled = true
+    confirmCancellationBnt.textContent = `Confirmar (${time})`
+
+    const interval = setInterval( ()=> {
+        time--
+        confirmCancellationBnt.textContent = `Confirmar (${time})`
+
+        if (time <= 0){
+            clearInterval(interval)
+            confirmCancellationBnt.disabled = false
+            confirmCancellationBnt.textContent = "Confirmar"
+        }
+    }, 1000)
     confirmCancellationBnt.addEventListener("click", () => {
         confirmCancellationModal.classList.replace("confirmCancellationModal", "confirmCancellationModalAprove")
         confirmCancellationModal.innerHTML = `

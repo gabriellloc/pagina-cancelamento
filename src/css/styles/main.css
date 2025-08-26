@@ -127,7 +127,7 @@
     font: var(--tx-sm);
     color: var(--cl-darkgreen);
     background: var(--cl-lightgreen);
-    padding: .8rem 1.5rem;
+    padding: .8rem 3rem;
     text-align: center;
     border-radius: .5rem;
 }
@@ -163,9 +163,10 @@
 }
 
 .stats .inativa {
-    background-color: var(--cl-bnt-danger-hover);
-    color: var(--cl-white);
-    box-shadow: 0 0 .05rem var(--cl-bnt-danger-hover);
+    background-color: var(--cl-white);
+    border: 1px solid var(--cl-bnt-danger-hover);
+    color: var(--cl-bnt-danger-hover);
+    box-shadow: 0 0 .1rem var(--cl-bnt-danger-hover);
 }
 
 .stats .toSign:hover{
