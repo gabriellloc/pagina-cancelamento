@@ -148,13 +148,13 @@ ul {
     border: none;
     border-radius: 1rem;
     padding: 1rem;
-    width: 50rem;
+    width: 60rem;
     box-shadow: var(--box-shadow);
 }
 
 @media (width < 80em) {
     #modal-acolhimento {
-        width: 80%;
+        width: 55rem;
     }
 }
 
