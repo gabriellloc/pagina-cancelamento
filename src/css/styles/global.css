@@ -157,3 +157,27 @@ ul {
         width: 80%;
     }
 }
+
+@keyframes ContentsOf {
+    to {
+        transform: translateX(-100%);
+        position: absolute;
+    }
+}
+
+.contentsOf {
+    animation: ContentsOf 250ms both;
+}
+
+@keyframes ContentsOn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.contentsOn {
+    animation: ContentsOn 500ms both;
+}

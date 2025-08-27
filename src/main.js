@@ -19,6 +19,13 @@ const content = document.querySelector("#content");
 // Criando o modal de confirmação de cancelamento
 const confirmCancellationModal = document.createElement("dialog")
 
+const bntMenu = document.querySelector("#bntMenu")
+bntMenu.addEventListener("click", () => {
+    const mainLeft = document.querySelector(".main-l")
+    mainLeft.classList.toggle("contentsOf")
+    mainLeft.classList.toggle("contentsOn")
+})
+
 // Botão de abrir o modal
 bntCancel.addEventListener("click", () => {
     modal.innerHTML = ""
