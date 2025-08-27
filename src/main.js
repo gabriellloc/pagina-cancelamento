@@ -2,7 +2,7 @@
 
 import "./css/index.css"
 
-let userName = "Isabela santos"
+let userName = "Isabela"
 
 // Obtendo as Variáveis
 // Botão de cancelar a assinatura
