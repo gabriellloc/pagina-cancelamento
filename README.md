@@ -1,5 +1,5 @@
 # Página de Cancelamento de Assinatura - EngPlay
-![Static Badge](https://img.shields.io/badge/Stats-In_Development-blue)
+![Static Badge](https://img.shields.io/badge/Status-In_Development-blue)
 
 ## Índice
 - [Descrição](#descrição)
