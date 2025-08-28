@@ -1,11 +1,16 @@
 # Página de Cancelamento de Assinatura - EngPlay
 ![Static Badge](https://img.shields.io/badge/Status-In_Development-blue)
 
-## Description
+## Índice
+- [Descrição](#descrição)
+- [Licença](#licença)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+
+## Descrição
 Este projeto consiste em uma interface simples e funcional que permite aos usuários gerenciar o cancelamento de suas assinaturas de forma prática e intuitiva.  
 Foi desenvolvido pela **Squad 24** como parte do desafio proposto pelo **Porto Digital**, com foco em oferecer uma experiência clara e eficiente para o usuário durante o processo de cancelamento.
 
-## licença
+## Licença
 ![Static Badge](https://img.shields.io/badge/License-MIT-green)
 
 ## Tecnologias Utilizadas
