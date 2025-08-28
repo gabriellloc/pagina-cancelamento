@@ -162,12 +162,12 @@ ul {
 @keyframes ContentsOf {
     to {
         transform: translateX(-100%);
-        position: absolute;
+        display: none;
     }
 }
 
 .contentsOf {
-    animation: ContentsOf 250ms ease-in both;
+    animation: ContentsOf 200ms ease-in both;
 }
 
 @keyframes ContentsOn {
@@ -180,5 +180,5 @@ ul {
 }
 
 .contentsOn {
-    animation: ContentsOn 500ms ease-out both;
+    animation: ContentsOn 200ms ease-out both;
 }
