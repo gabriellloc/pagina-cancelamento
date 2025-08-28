@@ -52,12 +52,13 @@
 }
 
 .confirmCancellationDiv .confirmCancellationBnt:disabled {
-    background-color: var(--cl-bnt-danger-hover);
+    background-color: var(--cl-bnt-disabled);
 }
 
 .confirmCancellationDiv .confirmCancellationBnt:disabled:hover{
+    background-color: var(--cl-bnt-disabled);
     transform: none;
-    box-shadow: 0 0 .2rem var(--cl-bnt-danger);
+    box-shadow: 0 0 .2rem var(--cl-bnt-disabled);
 }
 
 .confirmCancellationDiv .confirmCancellationBnt{
