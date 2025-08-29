@@ -24,6 +24,12 @@ bntMenu.addEventListener("click", () => {
     const mainLeft = document.querySelector(".main-l")
     mainLeft.classList.toggle("contentsOf")
     mainLeft.classList.toggle("contentsOn")
+    bntMenu.classList.toggle("rotate")
+    if (!bntMenu.classList.contains("rotate")){
+        bntMenu.classList.toggle("rotateOpen")
+    } else {
+        bntMenu.classList.remove("rotateOpen")
+    }
 })
 
 // Botão de abrir o modal

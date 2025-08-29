@@ -149,13 +149,13 @@ ul {
     border: none;
     border-radius: 1rem;
     padding: 1rem;
-    width: 60rem;
+    width: 50rem;
     box-shadow: var(--box-shadow);
 }
 
-@media (width < 80em) {
+@media (width < 60em) {
     #modal-acolhimento {
-        width: 55rem;
+        width: 40rem;
     }
 }
 
@@ -181,4 +181,14 @@ ul {
 
 .contentsOn {
     animation: ContentsOn 200ms ease-out both;
+}
+
+.rotate {
+    transition: all 350ms ease;
+    transform: rotate(-360deg);
+}
+
+.rotateOpen {
+    transition: all 350ms ease;
+    transform: rotate(0);
 }
