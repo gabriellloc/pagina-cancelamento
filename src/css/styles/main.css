@@ -108,7 +108,8 @@
 .charge section:last-child {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    flex-wrap: wrap;
+    gap: 2.5rem;
 }
 
 .charge section div h3 {
@@ -122,8 +123,18 @@
     color: var(--cl-desc);
 }
 
+.charge section div:first-child {
+    flex: 1;
+}
+
+.charge section div:last-child {
+    flex: 1;
+}
+
 .stats {
     display: flex;
+    gap: 2.5rem;
+    /* flex-wrap: wrap; */
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -168,7 +179,7 @@
     border: 2px solid var(--cl-desc);
 }
 
-@media (width < 80em) {
+/* @media (width < 80em) {
     .charge section:last-child {
         flex-direction: column;
         align-items: normal;
@@ -178,7 +189,7 @@
         width: fit-content;
         text-align: center;
     }
-}
+} */
 
 .stats .inativa {
     background-color: var(--cl-white);
