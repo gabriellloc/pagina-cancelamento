@@ -1,7 +1,7 @@
 .receptionDiv {
     display: flex;
     flex-direction: column;
-    gap: 1.4rem;
+    gap: 1.5rem;
     padding-block: 1.5rem;
 }
 
@@ -45,7 +45,7 @@
     margin: auto;
     color: var(--cl-black);
     font: var(--tx-md);
-    width: 70%;
+    width: 80%;
 }
 
 @media (width < 80em) {
@@ -57,6 +57,7 @@
 
 .receptionDiv div {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;  
     margin: auto;
     width: 100%;
@@ -64,7 +65,6 @@
 
 @media (width < 80em) {
     .receptionDiv div {
-        flex-wrap: wrap;
         gap: 1.3rem;
     }
 

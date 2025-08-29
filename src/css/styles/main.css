@@ -12,6 +12,7 @@
 .main-l {
     background-image: linear-gradient(-7deg, #7203E1 50%, #126FEB);
     height: 100vh;
+    transition: all 200ms ease-in;
 }
 
 .dad {
