@@ -1,19 +1,20 @@
 # Página de Cancelamento de Assinatura - EngPlay
 ![Static Badge](https://img.shields.io/badge/Status-In_Development-blue)
 
-## Índice
+## 📋 Índice
 - [Descrição](#descrição)
 - [Licença](#licença)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Estrutura de Pastas](#estrutura-de-pastas)
 
-## Descrição
+## 📄 Descrição
 Este projeto consiste em uma interface simples e funcional que permite aos usuários gerenciar o cancelamento de suas assinaturas de forma prática e intuitiva.  
 Foi desenvolvido pela **Squad 24** como parte do desafio proposto pelo **Porto Digital**, com foco em oferecer uma experiência clara e eficiente para o usuário durante o processo de cancelamento.
 
-## Licença
-![Static Badge](https://img.shields.io/badge/License-MIT-green)
+## 📝 Licença
+[![Static Badge](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-## Tecnologias Utilizadas
+## 💻 Tecnologias Utilizadas
 
 **Linguagens**  
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
@@ -23,3 +24,51 @@ Foi desenvolvido pela **Squad 24** como parte do desafio proposto pelo **Porto D
 **Ferramentas**  
 ![Babel](https://img.shields.io/badge/Babel-F9DC3e?style=for-the-badge&logo=babel&logoColor=black)
 ![Webpack](https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black)
+
+## 📁 Estrutura de Pastas
+
+    pagina-cancelamento/
+    ├── docs/       # Pasta com os arquivos principais já modificados
+    ├── src/        # Código-fonte do projeto
+    │   ├── assets/     # Imagens, ícones e outros recursos estáticos
+    │   ├── css/        # Arquivos de estilo (CSS)
+    │   ├── Index.html      # Estrutura principal da página
+    │   └── main.js     # Arquivo JavaScript principal
+    ├── webpack.config.js       # Configurações do Webpack
+    └──README.md        # Documentação do projeto
+
+## 🛠️ Desenvolvimento e Instalação
+Siga os passos abaixo para configurar o ambiente de desenvolvimento e executar o projeto:
+
+1. **Clone o repositório:** 
+    ```bash
+    git clone https://github.com/gabriellloc/pagina-cancelamento.git
+2. **Instale as dependências:** <br>
+    No console, execute:
+    ```bash
+    npm install
+3. **Edite o código na pasta <code>src/</code>**: <br>
+    Após realizar as alterações. gere a versão final com:
+    ```bash
+    npm run build
+    ```
+    Esse comando compila os arquivos e envia as modificações para a pasta docs/, que funciona como saída principal do projeto.
+
+4. **Visualizar as modificações em tempo real:**<br>
+    Execute o comando:
+    ```bash
+    npm run dev
+    ```
+    Esse comando inicia um servidor local (localhost) e exibe o projeto já com as suas alterações.
+
+## 🧑‍🤝‍🧑 Autores
+- **[Isadora Matos Bispo](https://github.com/misabm)** - Líder do squad
+- **[Gabriel Oliveira Cardoso](https://github.com/gabriellloc)** - Desenvolvedor Front-End
+- **[Paulo Henrique Santiago Santos]()** - 
+- **[Lucas Gabriel dos Santos Azevedo]()** - 
+- **[Alan Oliveira Silva Júnior]()** - 
+- **[Carlos Eduardo Bezerra Menezes]()** - 
+- **[José Guilherme Oliveira Van Geem]()** - 
+- **[José Santos do Nascimento Neto]()** - 
+- **[Luiz Gustavo de Oliveira Tavares]()** -
+- **[Thiago Antonio de Albuquerque Passos]()** - 
