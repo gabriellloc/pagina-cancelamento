@@ -2,10 +2,10 @@
 ![Static Badge](https://img.shields.io/badge/Status-In_Development-blue)
 
 ## 📋 Índice
-- [Descrição](#descrição)
-- [Licença](#licença)
-- [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Estrutura de Pastas](#estrutura-de-pastas)
+- [Descrição](#-descrição)
+- [Licença](#-licença)
+- [Tecnologias Utilizadas](#-tecnologias-utilizadas)
+- [Estrutura de Pastas](#-estrutura-de-pastas)
 - [Desenvolvimento e Instalação](#️-desenvolvimento-e-instalação)
 - [Autores](#-autores)
 
