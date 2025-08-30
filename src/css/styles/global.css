@@ -23,6 +23,7 @@ body {
     --ff: "Noto Sans HK", sans-serif;
 
     --title-large: 700 2.5rem/1 var(--ff); /* 40px */
+    --title-ls: 700 2rem/1 var(--ff);;
     --title-sl: 700 1.875rem/1 var(--ff); /* 30px*/
     --title-ssl: 700 1.5rem/1 var(--ff); /* */
     --title-sssl: 700 1.3rem/1 var(--ff);
@@ -111,7 +112,7 @@ ul {
 
 .manterAss {
     background-image: var(--linear-bg-cl);
-    padding: .875rem;
+    padding: .875rem 1.6rem;
     color: var(--cl-white);
     font: var(--bnt-cancel-md);
     border-radius: .5rem;
@@ -161,8 +162,9 @@ ul {
 
 @keyframes ContentsOf {
     to {
+        opacity: 0;
         transform: translateX(-100%);
-        display: none;
+        position: absolute;
     }
 }
 
@@ -175,6 +177,7 @@ ul {
         transform: translateX(-100%);
     }
     to {
+        width: fit-content;
         transform: translateX(0);
     }
 }

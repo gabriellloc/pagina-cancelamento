@@ -2,7 +2,7 @@
 
 import "./css/index.css"
 
-let userName = "Isabela"
+let userName = "Isadora"
 
 // Obtendo as Variáveis
 // Botão de cancelar a assinatura
@@ -21,9 +21,14 @@ const confirmCancellationModal = document.createElement("dialog")
 
 const bntMenu = document.querySelector("#bntMenu")
 bntMenu.addEventListener("click", () => {
-    const mainLeft = document.querySelector(".main-l")
-    mainLeft.classList.toggle("contentsOf")
-    mainLeft.classList.toggle("contentsOn")
+    const RemoveH2 = document.querySelectorAll(".dad .childs h2")
+    RemoveH2.forEach(el => {
+        el.classList.toggle("contentsOf")
+        el.classList.toggle("contentsOn")
+    })
+    const mainRe = document.querySelector(".main-l")
+    mainRe.classList.toggle("contentsLeftOn")
+
     bntMenu.classList.toggle("rotate")
     if (!bntMenu.classList.contains("rotate")){
         bntMenu.classList.toggle("rotateOpen")
