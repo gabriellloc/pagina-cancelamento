@@ -30,6 +30,12 @@
 ![Babel](https://img.shields.io/badge/Babel-F9DC3e?style=for-the-badge&logo=babel&logoColor=black)
 ![Webpack](https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black)
 
+## 🛠️ Ferramentas Utilizadas
+- **Babel:** Transpilação de código JavaScript moderno para compatibilidade com diferentes navegadores.
+- **Webpack:** Empacotamento e otimização dos arquivos (JavaScript e CSS), além de integração com o Babel.
+- **Node.js & npm:** Gerenciamento de dependências e execução dos scripts do projeto.
+- **Visual Studio Code:** Ambiente de desenvolvimento utilizado para escrever e organizar o código.
+
 ## 📁 Estrutura de Pastas
 
     pagina-cancelamento/
